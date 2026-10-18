@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VILLA YASUMIBA Okinawa Uruma | 東海岸には、あなたが知らない沖縄がある。</title>
+  <title>VILLA YASUMIBA Okinawa Uruma | 東海岸にはあなたが知らない沖縄がある</title>
   <meta name="description" content="沖縄県うるま市の一棟貸し、Independent House 沖縄VILLA YASUMIBA Okinawa Uruma。海中道路や離島へ向かう東海岸の滞在拠点。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Noto+Sans+JP:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       --base: #F8F5F0;
@@ -20,26 +20,26 @@
       --serif: "Zen Old Mincho", serif;
       --sans: "Noto Sans JP", sans-serif;
       --en: "Cormorant Garamond", "Times New Roman", serif;
-      --banner: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: clip; }
-    body { overflow-x: hidden; }
-
+    html { font-size: 16px; scroll-behavior: smooth; overflow-x: clip; }
     body {
+      overflow-x: hidden;
       margin: 0;
       min-width: 320px;
       background: var(--base);
-      color: var(--ink);
+      color: #6B5946;
       font-family: var(--sans);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
-      line-height: 1.95;
-      word-break: keep-all;
+      line-height: 2.0;
+      letter-spacing: 0.04em;
+      word-break: normal;
       line-break: strict;
-      overflow-wrap: break-word;
+      overflow-wrap: normal;
     }
+
 
     img, iframe { display: block; width: 100%; }
     img { height: auto; object-fit: cover; }
@@ -47,14 +47,32 @@
     h1, h2, h3, p, figure, blockquote { margin: 0; }
 
     h1, h2, h3 {
+      word-break: normal;
+      line-break: strict;
       overflow-wrap: normal;
     }
 
     h1, h2 {
+      color: var(--ink);
       font-family: var(--serif);
-      font-weight: 700;
-      line-height: 1.28;
-      letter-spacing: 0;
+      font-feature-settings: "palt" 1;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 2.9vw, 2.625rem);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      line-height: 1.6;
+    }
+
+    p, dd { word-break: auto-phrase; }
+    p { max-width: 34em; }
+    .np { display: inline-block; }
+    .wb { display: inline-block; }
+    .nowrap { white-space: nowrap; }
+    br.pc { display: inline; }
+    .features, .spot-list, .stars, .access {
+      font-variant-numeric: lining-nums tabular-nums;
     }
 
     h3 {
@@ -69,7 +87,7 @@
     .lp-wrapper {
       width: 100%;
       padding-top: 0;
-      padding-bottom: 82px;
+      padding-bottom: 0;
     }
 
     .section {
@@ -86,33 +104,20 @@
 
     .kicker {
       margin-bottom: 16px;
-      color: var(--accent);
+      color: rgba(255,255,255,0.85);
       font-family: var(--en);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-size: 12px;
+      font-weight: 500;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.24em;
       line-height: 1.45;
       text-transform: uppercase;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4.2vw, 4.25rem);
     }
 
     .section-copy {
       margin-top: 24px;
       color: var(--brown);
-      line-height: 2.08;
-    }
-
-    .section-copy,
-    .area-copy,
-    .area-copy p,
-    .access-list,
-    .access-list li,
-    .hero-lead,
-    .slide blockquote {
-      overflow-wrap: anywhere;
+      line-height: 2.0;
     }
 
     .button {
@@ -121,21 +126,26 @@
       justify-content: center;
       gap: 10px;
       min-height: 52px;
-      padding: 13px 22px;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      background: var(--accent);
-      color: #fff;
-      font-family: var(--en);
-      font-size: 15px;
-      font-weight: 600;
+      padding: 14px 28px;
+      border: 1px solid currentColor;
+      border-radius: 0;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.12em;
       line-height: 1.35;
       text-align: center;
-      transition: transform 180ms ease, background 180ms ease;
+      transition: background 180ms ease, color 180ms ease;
     }
 
-    .button:hover { transform: translateY(-1px); }
-    .button.dark { background: var(--ink); color: var(--base); }
+    .button:hover { background: var(--ink); color: var(--base); border-color: var(--ink); }
+    .hero .button { color: #fff; }
+    .hero .button:hover { background: #fff; color: var(--ink); border-color: #fff; }
+    .button.dark { color: var(--ink); }
+    .button.dark:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
     .hero {
       min-height: 100svh;
@@ -144,18 +154,8 @@
       padding: clamp(116px, 13vw, 174px) 24px clamp(68px, 8vw, 104px);
       color: #fff;
       background:
-        linear-gradient(0deg, rgba(28, 28, 26, 0.76), rgba(28, 28, 26, 0.35)),
+        linear-gradient(0deg, rgba(28,28,26,0.62) 0%, rgba(28,28,26,0.15) 55%, rgba(28,28,26,0.05) 100%),
         url("photos/spots/kafu-banta-hero.jpg") center / cover no-repeat;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      z-index: 0;
-      height: 38%;
-      background: linear-gradient(0deg, rgba(28, 28, 26, 0.66), transparent);
-      pointer-events: none;
     }
 
     .hero-inner {
@@ -166,27 +166,13 @@
     }
 
     .hero h1 {
-      max-width: 760px;
-      font-size: clamp(2.2rem, min(5vw, 8.4vh), 4.35rem);
-      text-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
-    }
-
-    .hero-tagline {
-      max-width: 680px;
-      margin-top: 20px;
-      color: rgba(255, 255, 255, 0.75);
-      font-family: var(--sans);
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      line-height: 1.8;
-    }
-
-    .hero-lead {
-      max-width: 610px;
-      margin-top: 16px;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 16px;
-      line-height: 2;
+      max-width: 100%;
+      color: inherit;
+      font-size: clamp(2.25rem, 4.6vw, 4.25rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.55;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.25);
     }
 
     .hero-actions {
@@ -196,34 +182,18 @@
       margin-top: 32px;
     }
 
-    .section-wave {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      z-index: 0;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-      pointer-events: none;
-    }
-
-    .section-wave svg {
-      display: block;
-      width: 100%;
-      height: 60px;
-    }
-
     .features {
-      background: var(--ink);
-      color: var(--base);
+      background: var(--base);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
     }
 
     .features-grid {
       width: min(1120px, 100%);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .feature-item {
@@ -232,17 +202,16 @@
       align-items: center;
       justify-content: center;
       padding: 20px 16px;
-      border-left: 1px solid rgba(248, 245, 240, 0.16);
-      font-family: var(--en);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      border-left: 1px solid var(--line);
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
       line-height: 1.6;
       text-align: center;
-      text-transform: uppercase;
     }
 
-    .feature-item:last-child { border-right: 1px solid rgba(248, 245, 240, 0.16); }
+    .feature-item:last-child { border-right: 1px solid var(--line); }
 
     .two-col {
       display: grid;
@@ -263,39 +232,19 @@
       overflow: hidden;
     }
 
-    .area::before {
-      content: "";
-      position: absolute;
-      top: -120px;
-      right: -180px;
-      z-index: 0;
-      width: 520px;
-      height: 520px;
-      border-radius: 58% 42% 34% 66% / 50% 58% 42% 50%;
-      background: radial-gradient(circle at 48% 48%, rgba(201, 95, 58, 0.12), transparent 70%);
-      filter: blur(44px);
-      pointer-events: none;
-    }
-
-    .area .section-title,
-    .care .section-title,
-    .access .section-title {
-      font-size: clamp(1.9rem, 3.55vw, 3.35rem);
-    }
-
     .area-copy {
       display: grid;
+      grid-template-columns: minmax(0, 1fr);
       gap: 18px;
       margin-top: 24px;
       color: var(--brown);
-      line-height: 2.08;
+      line-height: 2.0;
     }
 
     .photo-frame {
       position: relative;
       overflow: hidden;
       min-height: 520px;
-      border: 1px solid var(--line);
       background: var(--paper);
     }
 
@@ -306,23 +255,9 @@
       object-fit: cover;
     }
 
-    .photo-frame::after {
-      content: attr(data-label);
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      padding: 8px 10px;
-      background: rgba(28, 28, 26, 0.68);
-      color: var(--base);
-      font-family: var(--en);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
     .spot-list {
       display: grid;
+      grid-template-columns: minmax(0, 1fr);
       gap: 0;
       margin: 34px 0 0;
       padding: 0;
@@ -349,31 +284,6 @@
       overflow: hidden;
     }
 
-    .care::before {
-      content: "";
-      position: absolute;
-      top: -70px;
-      left: -120px;
-      z-index: 0;
-      width: 460px;
-      height: 460px;
-      border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
-      background: radial-gradient(circle at 52% 48%, rgba(230, 222, 212, 0.72), transparent 68%);
-      filter: blur(34px);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    .care-quote {
-      margin-top: 28px;
-      padding-left: 18px;
-      border-left: 3px solid var(--accent);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: clamp(1.2rem, 2.1vw, 1.7rem);
-      line-height: 1.8;
-    }
-
     .reviews {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -391,10 +301,12 @@
     .slider-track {
       overflow: hidden;
       position: relative;
+      transition: height .3s ease;
     }
 
     .slider {
       display: flex;
+      align-items: flex-start;
       transition: transform 0.36s ease;
     }
 
@@ -463,9 +375,9 @@
     }
 
     .slide {
-      min-height: 280px;
       display: grid;
-      align-content: center;
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
       gap: 22px;
       padding: clamp(28px, 5vw, 48px);
       border: 1px solid var(--line);
@@ -481,8 +393,8 @@
       color: var(--accent);
       font-family: var(--en);
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
+      font-weight: 500;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
@@ -494,8 +406,9 @@
 
     .slide blockquote {
       font-family: var(--serif);
-      font-size: clamp(1.18rem, 2.1vw, 1.8rem);
-      line-height: 1.78;
+      font-size: clamp(1.05rem, 1.6vw, 1.375rem);
+      font-weight: 400;
+      line-height: 2.0;
     }
 
     .space {
@@ -515,28 +428,24 @@
 
     .space-card {
       overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--base);
+      background: transparent;
+      border: 0;
     }
 
     .space-card img {
       width: 100%;
       aspect-ratio: 4 / 5;
-      height: 100%;
+      height: auto;
       object-fit: cover;
     }
 
     .space-card h3 {
-      min-height: 58px;
-      display: flex;
-      align-items: center;
-      padding: 14px 16px;
+      padding: 10px 0 0;
       color: var(--brown);
-      font-family: var(--en);
+      font-family: var(--sans);
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.1em;
     }
 
     .access {
@@ -545,6 +454,7 @@
 
     .access-card {
       display: grid;
+      grid-template-columns: minmax(0, 1fr);
       align-content: center;
       gap: 22px;
       min-height: 460px;
@@ -555,6 +465,7 @@
 
     .access-list {
       display: grid;
+      grid-template-columns: minmax(0, 1fr);
       gap: 16px;
       margin: 0;
       padding: 0;
@@ -563,6 +474,7 @@
 
     .access-list li {
       display: grid;
+      grid-template-columns: minmax(0, 1fr);
       gap: 4px;
       color: var(--brown);
     }
@@ -570,10 +482,6 @@
     .access-list strong {
       color: var(--ink);
       font-weight: 500;
-    }
-
-    .access-list a {
-      word-break: break-all;
     }
 
     .map-wrap {
@@ -593,8 +501,9 @@
 
     .final-cta {
       padding: clamp(76px, 10vw, 120px) 24px;
-      background: var(--accent);
-      color: #fff;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      color: var(--ink);
       text-align: center;
     }
 
@@ -610,38 +519,81 @@
     }
 
     .final-cta h2 {
-      max-width: min(820px, 100%);
-      font-size: clamp(2rem, 4.5vw, 4.2rem);
+      max-width: 100%;
+      font-family: var(--en);
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
     }
 
     .final-cta p {
-      max-width: min(640px, 100%);
-      color: rgba(255, 255, 255, 0.86);
+      max-width: min(34em, 100%);
+      color: var(--brown);
     }
 
     .fixed-cta {
       position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      right: 24px;
+      bottom: 24px;
+      left: auto;
       z-index: 900;
-      display: flex;
-      justify-content: center;
-      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-      border-top: 1px solid rgba(28, 28, 26, 0.1);
-      background: rgba(248, 245, 240, 0.92);
-      backdrop-filter: blur(14px);
+      display: none;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 200ms ease, transform 200ms ease;
     }
 
     .fixed-cta .button {
-      width: min(430px, 100%);
-      box-shadow: 0 14px 34px rgba(28, 28, 26, 0.16);
+      width: auto;
+      border: 0;
+      background: var(--ink);
+      color: var(--base);
+      box-shadow: none;
+    }
+
+    .fixed-cta.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    .site-footer {
+      padding: 48px 24px;
+      border-top: 1px solid var(--line);
+      background: var(--base);
+      color: var(--brown);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .site-footer p { margin-inline: auto; }
+    .site-footer .footer-name {
+      color: var(--ink);
+      font-family: var(--en);
+      font-size: 14px;
+      font-weight: 500;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 920px) {
+      .site-footer { padding-bottom: 128px; }
+      .fixed-cta {
+        display: flex;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--line);
+        background: rgba(248,245,240,0.94);
+      }
+      .fixed-cta .button { width: 100%; }
       .features-grid,
       .card-grid-3 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .two-col,
@@ -667,7 +619,7 @@
     }
 
     @media (max-width: 640px) {
-      body { font-size: 14px; }
+      body { font-size: 15px; }
 
       .section {
         padding: 62px 20px;
@@ -680,43 +632,29 @@
 
       .hero h1 {
         max-width: 100%;
-        font-size: clamp(1.84rem, 7.1vw, 2.12rem);
-        overflow-wrap: anywhere;
+        font-size: clamp(1.75rem, 7.4vw, 2.125rem);
       }
 
-      .hero h1 br { display: none; }
-
-      .hero-tagline {
-        font-size: 12px;
-      }
-
-      .hero-lead {
-        font-size: 14px;
-        line-height: 1.95;
-      }
+      br.pc { display: none; }
 
       .hero-actions,
       .hero-actions .button {
         width: 100%;
       }
 
-      .section-title,
-      .area .section-title,
-      .care .section-title,
-      .access .section-title,
-      .final-cta h2 {
-        font-size: clamp(1.8rem, 8.4vw, 2.55rem);
+      h2 {
+        font-size: clamp(1.5rem, 6.6vw, 1.875rem);
       }
 
       .features-grid,
       .card-grid-3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .feature-item {
         min-height: 72px;
         border-left: 0;
-        border-top: 1px solid rgba(248, 245, 240, 0.16);
+        border-top: 1px solid var(--line);
       }
 
       .feature-item:last-child { border-right: 0; }
@@ -727,6 +665,7 @@
 
       .spot-list li {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 4px;
       }
 
@@ -757,24 +696,12 @@
 <body>
   <div class="lp-wrapper">
     <header class="section hero">
-      <!-- 写真差し込み: ヒーロー背景 — 建物外観または室内全景（広角・温かみのある光） -->
       <div class="hero-inner">
         <p class="kicker">VILLA YASUMIBA OKINAWA URUMA</p>
-        <h1>東海岸には、<wbr>あなたが知らない<wbr>沖縄がある。</h1>
-        <p class="hero-tagline">YASUMIBAは東海岸を遊び尽くすのに最適な拠点。</p>
-        <p class="hero-lead">
-          地元の朝市。<br>
-          誰もいないビーチ。<br>
-          果報バンタ。
-        </p>
+        <h1><span class="np">東海岸には</span><br class="pc"><span class="np">あなたが知らない</span><br class="pc"><span class="np">沖縄がある</span><br class="pc"></h1>
         <div class="hero-actions">
           <a class="button cta" href="https://www.booking.com/hotel/jp/yasumiba.ja.html" target="_blank" rel="noopener">空き日程を確認する</a>
         </div>
-      </div>
-      <div class="section-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F8F5F0" opacity="0.92"/>
-        </svg>
       </div>
     </header>
 
@@ -782,26 +709,19 @@
       <div class="features-grid">
         <div class="feature-item">1棟貸切</div>
         <div class="feature-item">最大10名</div>
-        <div class="feature-item">Booking.com ★9.5</div>
+        <div class="feature-item">Booking.com 9.5</div>
         <div class="feature-item">海中道路まで車20分</div>
       </div>
     </section>
 
     <section class="section area">
-      <div class="section-wave" aria-hidden="true" style="top:0; bottom:auto; transform:rotate(180deg); opacity:.4;">
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#E6DED4"/>
-        </svg>
-      </div>
       <div class="section-inner two-col">
         <div class="text-col">
-          <p class="kicker">East Coast Route</p>
-          <h2 class="section-title">こんな沖縄が、<wbr>あったのか。</h2>
+          <h2 class="section-title"><span class="np">こんな沖縄が</span><span class="np">あったのか</span></h2>
           <div class="area-copy">
-            <p>海中道路。与勝半島から平安座島まで、海の上を4.7kmの道路がまっすぐ走る。窓を開けると、潮風がダイレクトに入ってくる。その先に宮城島、さらに伊計島。橋でつながる島が、つづく。</p>
-            <p>宮城島の崖の上に、「果報バンタ」がある。沖縄の言葉で、幸せの崖。断崖絶壁から見下ろすエメラルドグリーンの海は、静かで、人がいない。</p>
-            <p>浜比嘉島には、石垣と赤瓦の民家が今も残っている。ガイドブックには載っていない。地元の人が昔から、普通に来ていた島。</p>
-            <p>東海岸のビーチには、なぜかほとんど人がいない。西海岸と同じ沖縄の海なのに。</p>
+            <p><span class="wb">海中道路。</span><span class="wb">与勝半島から</span><span class="wb">平安座島まで</span><span class="wb">海の上を</span><span class="wb"><span class="nowrap">4.7km</span>の</span><span class="wb">道路が</span><span class="wb">まっすぐ</span><span class="wb">走る。</span><span class="wb">窓を</span><span class="wb">開けると</span><span class="wb">潮風が</span><span class="wb">入ってくる。</span><span class="wb">その先に</span><span class="wb">宮城島、</span><span class="wb">さらに</span><span class="wb">伊計島。</span><span class="wb">橋で</span><span class="wb">つながる</span><span class="wb">島が</span><span class="wb">つづく。</span></p>
+            <p><span class="wb">宮城島の</span><span class="wb">崖の上に</span><span class="wb">「果報バンタ」が</span><span class="wb">ある。</span><span class="wb">沖縄の</span><span class="wb">言葉で</span><span class="wb">幸せの</span><span class="wb">崖。</span><span class="wb">断崖から</span><span class="wb">見下ろす</span><span class="wb">海は</span><span class="wb">静かで</span><span class="wb">人が</span><span class="wb">いない。</span></p>
+            <p><span class="wb">浜比嘉島には</span><span class="wb">石垣と</span><span class="wb">赤瓦の</span><span class="wb">民家が</span><span class="wb">今も</span><span class="wb">残っている。</span><span class="wb">地元の</span><span class="wb">人が</span><span class="wb">昔から</span><span class="wb">普通に</span><span class="wb">来ていた</span><span class="wb">島。</span></p>
           </div>
           <ul class="spot-list">
             <li><strong>海中道路</strong><span>車20分</span></li>
@@ -813,8 +733,7 @@
           </ul>
         </div>
         <div class="media-col">
-          <!-- 写真差し込み: 海中道路・離島・果報バンタからエメラルドグリーンの海 -->
-          <figure class="photo-frame" data-label="Kaichu road / Uruma coast">
+          <figure class="photo-frame">
             <img src="photos/spots/kaichu-road-1.jpg" alt="うるま市の海中道路" loading="lazy">
           </figure>
         </div>
@@ -824,21 +743,13 @@
     <section class="section care">
       <div class="section-inner two-col reverse">
         <div class="text-col">
-          <p class="kicker">Owner Care</p>
-          <h2 class="section-title">何も考えずに、<wbr>休めた。</h2>
+          <h2 class="section-title"><span class="np">何も考えずに</span><span class="np">休めた</span></h2>
           <div class="section-copy">
-            <p>冷蔵庫に、ゴーヤとジュース。</p>
-            <p>ミキサー、ボードゲーム、何種類も。</p>
-            <p>「あったらいいな」が全部あった。</p>
+            <p><span class="wb">冷蔵庫には</span><span class="wb">ゴーヤと</span><span class="wb">ジュースが</span><span class="wb">入っていて、</span><span class="wb">ミキサーや</span><span class="wb">ボードゲームも</span><span class="wb">用意されている。</span></p>
           </div>
-          <blockquote class="care-quote">
-            「5つ星ホテル以上の気配りを感じた」<br>
-            ——Googleマップ、家族旅行のゲストより
-          </blockquote>
         </div>
         <div class="media-col">
-          <!-- 写真差し込み: 宿の入口・外観またはリビング全景 -->
-          <figure class="photo-frame" data-label="Living / entrance">
+          <figure class="photo-frame">
             <img src="photos/villa/yasumiba_7ec5826c.jpg" alt="VILLA YASUMIBA 室内" loading="lazy">
           </figure>
         </div>
@@ -849,31 +760,30 @@
       <div class="section-inner">
         <div class="reviews-head">
           <div>
-            <p class="kicker">Guest Voices</p>
             <h2 class="section-title">泊まった方の声</h2>
           </div>
         </div>
         <div class="slider-track">
           <div class="slider" id="reviewSlider">
             <article class="slide">
-              <div class="review-meta"><span>Google Maps</span><span class="stars">★★★★★</span></div>
-              <blockquote>「オーナーが家族のように接してくれ、5つ星ホテル以上の気配りを感じた。清潔感があり、家族連れに最適。」</blockquote>
+              <div class="review-meta"><span>Google Maps</span><span class="stars">5.0</span></div>
+              <blockquote><span class="wb">「オーナーが</span><span class="wb">家族のように</span><span class="wb">接してくれ、</span><span class="wb">5つ星ホテル以上の</span><span class="wb">気配りを</span><span class="wb">感じた。</span><span class="wb">清潔感が</span><span class="wb">あり、</span><span class="wb">家族連れに</span><span class="wb">最適。」</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span><span class="stars">★★★★★</span></div>
-              <blockquote>「ホストさんとの連絡がとてもスムーズだった、いろいろ気を遣ってくださり冷蔵庫の中にかわいいゴーヤやジュースのサービスまで✨ 朝にはスムージーをミキサーでつくったり、みんなで遊べるゲームもたくさんあって。できていたら楽しすぎてもっと遊んでました！！」</blockquote>
+              <div class="review-meta"><span>Booking.com</span><span class="stars">5.0</span></div>
+              <blockquote><span class="wb">「ホストさんとの</span><span class="wb">連絡が</span><span class="wb">とても</span><span class="wb">スムーズだった、</span><span class="wb">いろいろ</span><span class="wb">気を</span><span class="wb">遣ってくださり</span><span class="wb">冷蔵庫の</span><span class="wb">中に</span><span class="wb">かわいい</span><span class="wb">ゴーヤや</span><span class="wb">ジュースの</span><span class="wb">サービスまで </span><span class="wb">朝には</span><span class="wb">スムージーを</span><span class="wb">ミキサーで</span><span class="wb">つくったり、</span><span class="wb">みんなで</span><span class="wb">遊べる</span><span class="wb">ゲームも</span><span class="wb">たくさん</span><span class="wb">あって。</span><span class="wb">できていたら</span><span class="wb">楽しすぎて</span><span class="wb">もっと</span><span class="wb">遊んでました！！」</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span><span class="stars">★★★★★</span></div>
-              <blockquote>「お家のような空間ですごく過ごしやすかったです。ドリンクも無料で冷蔵庫に入っていたのも嬉しかったです！ チェックインも早めに準備終えてくれて、オーナーさんは優しい人だなと思いました！」</blockquote>
+              <div class="review-meta"><span>Booking.com</span><span class="stars">5.0</span></div>
+              <blockquote><span class="wb">「お家のような</span><span class="wb">空間で</span><span class="wb">すごく</span><span class="wb">過ごしやすかったです。</span><span class="wb">ドリンクも</span><span class="wb">無料で</span><span class="wb">冷蔵庫に</span><span class="wb">入っていたのも</span><span class="wb">嬉しかったです！ </span><span class="wb">チェックインも</span><span class="wb">早めに</span><span class="wb">準備</span><span class="wb">終えてくれて、</span><span class="wb">オーナーさんは</span><span class="wb">優しい</span><span class="wb">人だなと</span><span class="wb">思いました！」</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span><span class="stars">★★★★★</span></div>
-              <blockquote>”The photos are accurate but don't do it justice. It's bigger on the inside than on the outside. I liked it so much that I took lots of pictures inside and out to share with my friends. If I ever visit Uruma in the future, I will definitely try to book this.”</blockquote>
+              <div class="review-meta"><span>Booking.com</span><span class="stars">5.0</span></div>
+              <blockquote>“The photos are accurate but don't do it justice. It's bigger on the inside than on the outside. I liked it so much that I took lots of pictures inside and out to share with my friends. If I ever visit Uruma in the future, I will definitely try to book this.”</blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Google Maps</span><span class="stars">★★★★★</span></div>
-              <blockquote>”The staff are awesome, super friendly and helpful.”</blockquote>
+              <div class="review-meta"><span>Google Maps</span><span class="stars">5.0</span></div>
+              <blockquote>“The staff are awesome, super friendly and helpful.”</blockquote>
             </article>
           </div>
         </div>
@@ -888,29 +798,25 @@
     <section class="section space">
       <div class="section-inner">
         <div class="space-head">
-          <p class="kicker">Private House</p>
-          <h2 class="section-title">写真より、<wbr>広い。</h2>
-          <p class="section-copy">
-            「写真は正確だが、実物の方が広く感じる」——Booking.comゲスト。新築。設備は全部新しい。リビング・キッチン・寝室・浴室——10名が過ごす空間として、不足がない。調理器具完備。ボードゲームのコレクション。
-          </p>
+          <h2 class="section-title"><span class="np">写真より</span><span class="np">広い</span></h2>
+          <p class="section-copy"><span class="wb">新築で</span><span class="wb">設備は</span><span class="wb">すべて</span><span class="wb">新しい。</span><span class="wb">リビングと</span><span class="wb">キッチン、</span><span class="wb">寝室、</span><span class="wb">浴室を</span><span class="wb">10名で</span><span class="wb">使える。</span><span class="wb">調理器具と</span><span class="wb">ボードゲームも</span><span class="wb">そろっている。</span></p>
         </div>
-        <!-- 写真差し込み: リビング / キッチン / 寝室 / 浴室（各1枚） -->
         <div class="card-grid-3">
           <article class="space-card">
-            <img src="photos/villa/yasumiba_e1b6a8b0.jpg" alt="VILLA YASUMIBA リビング" loading="lazy">
-            <h3>Living</h3>
+            <img src="photos/villa/yasumiba_e1b6a8b0.jpg" alt="VILLA YASUMIBA 寝室" loading="lazy">
+            <h3>寝室</h3>
           </article>
           <article class="space-card">
-            <img src="photos/villa/yasumiba_70763ec7.jpg" alt="VILLA YASUMIBA キッチン" loading="lazy">
-            <h3>Kitchen</h3>
+            <img src="photos/villa/yasumiba_70763ec7.jpg" alt="VILLA YASUMIBA リビングのテレビ" loading="lazy">
+            <h3>テレビ</h3>
           </article>
           <article class="space-card">
-            <img src="photos/villa/yasumiba_1eff0de1.jpg" alt="VILLA YASUMIBA 寝室" loading="lazy">
-            <h3>Bedroom</h3>
+            <img src="photos/villa/yasumiba_1eff0de1.jpg" alt="VILLA YASUMIBA ボードゲーム" loading="lazy">
+            <h3>ボードゲーム</h3>
           </article>
           <article class="space-card">
-            <img src="photos/villa/yasumiba_ad92df1b.jpg" alt="VILLA YASUMIBA バスルーム" loading="lazy">
-            <h3>Bathroom</h3>
+            <img src="photos/villa/yasumiba_ad92df1b.jpg" alt="VILLA YASUMIBA 子ども向けの部屋" loading="lazy">
+            <h3>子ども向けの部屋</h3>
           </article>
         </div>
       </div>
@@ -919,12 +825,11 @@
     <section class="section access">
       <div class="section-inner two-col reverse">
         <div class="text-col access-card">
-          <p class="kicker">Access</p>
-          <h2 class="section-title">那覇空港から、<wbr>東海岸のうるまへ。</h2>
-          <p class="section-copy">那覇空港から車50〜60分。沖縄自動車道「沖縄北IC」経由で、海中道路やうるマルシェへ向かいやすい住宅街にあります。</p>
+          <h2 class="section-title"><span class="np">那覇空港から</span><span class="np">東海岸のうるまへ</span></h2>
+          <p class="section-copy"><span class="wb">那覇空港から</span><span class="wb">車50〜60分。</span><span class="wb">沖縄自動車道</span><span class="wb">「沖縄北IC」経由で</span><span class="wb">海中道路や</span><span class="wb">うるマルシェへ</span><span class="wb">向かいやすい</span><span class="wb">住宅街に</span><span class="wb">あります。</span></p>
           <ul class="access-list">
             <li><strong>住所</strong><span>〒904-2221 沖縄県うるま市平良川306-9</span></li>
-            <li><strong>Googleマップ</strong><a href="https://maps.app.goo.gl/DzYAKemADFCuFaQC7" target="_blank" rel="noopener">https://maps.app.goo.gl/DzYAKemADFCuFaQC7</a></li>
+            <li><strong>Googleマップ</strong><a href="https://maps.app.goo.gl/DzYAKemADFCuFaQC7" target="_blank" rel="noopener">Googleマップで開く</a></li>
             <li><strong>駐車場</strong><span>2台・無料</span></li>
           </ul>
         </div>
@@ -937,16 +842,20 @@
 
     <section class="final-cta">
       <div class="section-inner">
-        <p class="kicker">Booking</p>
-        <h2>東海岸には、<wbr>あなたが知らない<wbr>沖縄がある。</h2>
-        <a class="button cta dark" href="https://www.booking.com/hotel/jp/yasumiba.ja.html" target="_blank" rel="noopener">Booking.com で空き日程を確認する →</a>
-        <p>料金は時期により変動します。最新の空き状況はBooking.comよりご確認ください。</p>
+        <h2>VILLA YASUMIBA</h2>
+        <a class="button cta dark" href="https://www.booking.com/hotel/jp/yasumiba.ja.html" target="_blank" rel="noopener">Booking.com で空き日程を確認する</a>
+        <p><span class="wb">料金は</span><span class="wb">時期により</span><span class="wb">変動します。</span><span class="wb">最新の</span><span class="wb">空き状況は</span><span class="wb">Booking.comより</span><span class="wb">ご確認ください。</span></p>
       </div>
     </section>
-  </div>
+    <footer class="site-footer">
+      <p class="footer-name">VILLA YASUMIBA Okinawa Uruma</p>
+      <p>〒904-2221 沖縄県うるま市平良川306-9</p>
+      <p class="footer-copy">© VILLA YASUMIBA Okinawa Uruma</p>
+    </footer>
+  </div><!-- .lp-wrapper -->
 
   <div class="fixed-cta">
-    <a class="button cta" href="https://www.booking.com/hotel/jp/yasumiba.ja.html" target="_blank" rel="noopener">Booking.com で空き日程を確認する →</a>
+    <a class="button cta" href="https://www.booking.com/hotel/jp/yasumiba.ja.html" target="_blank" rel="noopener">Booking.com で空き日程を確認する</a>
   </div>
   <script>
     (function () {
@@ -974,6 +883,7 @@
       function render() {
         var w = track.offsetWidth;
         slider.style.transform = 'translateX(-' + (current * w) + 'px)';
+        track.style.height = slides[current].offsetHeight + 'px';
         dotsContainer.querySelectorAll('.slider-dot').forEach(function (d, i) {
           d.classList.toggle('active', i === current);
         });
@@ -1017,6 +927,17 @@
         document.fonts.ready.then(setWidths);
       }
       setWidths();
+    })();
+    (function () {
+      var hero = document.querySelector('.hero');
+      var fixedCta = document.querySelector('.fixed-cta');
+      if (!hero || !fixedCta) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          fixedCta.classList.toggle('is-visible', !entry.isIntersecting);
+        });
+      }, { threshold: 0 });
+      observer.observe(hero);
     })();
   </script>
 </body>
