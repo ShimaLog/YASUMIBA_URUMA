@@ -7,7 +7,7 @@
   <meta name="description" content="沖縄県うるま市の一棟貸し、Independent House 沖縄VILLA YASUMIBA Okinawa Uruma。海中道路や離島へ向かう東海岸の滞在拠点。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500&amp;family=EB+Garamond:wght@400;500&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       --base: #F8F5F0;
@@ -19,7 +19,7 @@
       --soft: rgba(230, 222, 212, 0.42);
       --serif: "Zen Old Mincho", serif;
       --sans: "Noto Sans JP", sans-serif;
-      --en: "Cormorant Garamond", "Times New Roman", serif;
+      --en: "EB Garamond", "Times New Roman", serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -71,7 +71,7 @@
     .wb { display: inline-block; }
     .nowrap { white-space: nowrap; }
     br.pc { display: inline; }
-    .features, .spot-list, .stars, .access {
+    .features, .route-time, .stars, .access {
       font-variant-numeric: lining-nums tabular-nums;
     }
 
@@ -107,7 +107,7 @@
       color: rgba(255,255,255,0.85);
       font-family: var(--en);
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 400;
       font-feature-settings: "palt" 1;
       letter-spacing: 0.24em;
       line-height: 1.45;
@@ -229,16 +229,6 @@
 
     .area {
       background: var(--base);
-      overflow: hidden;
-    }
-
-    .area-copy {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 24px;
-      color: var(--brown);
-      line-height: 2.0;
     }
 
     .photo-frame {
@@ -255,34 +245,126 @@
       object-fit: cover;
     }
 
-    .spot-list {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0;
+    .route {
       margin: 34px 0 0;
-      padding: 0;
+      padding: 0 0 0 22px;
       list-style: none;
-      border-top: 1px solid var(--line);
     }
 
-    .spot-list li {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 17px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--brown);
+    .route li { position: relative; }
+    .route li + li { margin-top: 28px; }
+    .route li::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: -22px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .route li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      bottom: -37px;
+      left: -19px;
+      width: 1px;
+      background: var(--line);
     }
 
-    .spot-list strong {
-      color: var(--ink);
+    .route-time {
+      display: block;
+      color: var(--accent);
+      font-family: var(--sans);
+      font-size: 14px;
       font-weight: 500;
+      letter-spacing: 0.14em;
+    }
+
+    .route-origin .route-time { font-size: 12px; }
+    .route .route-origin::before {
+      top: 7px;
+      left: -24px;
+      width: 11px;
+      height: 11px;
+      background: var(--ink);
+    }
+
+    .route-name {
+      display: block;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+      font-weight: 500;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.04em;
+    }
+
+    .route-origin .route-name {
+      color: var(--ink);
+      font-family: var(--en);
+      font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .route-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--brown);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    @media (min-width: 921px) {
+      .area .two-col { align-items: start; }
+      .area .media-col {
+        position: sticky;
+        top: 48px;
+      }
     }
 
     .care {
       background: var(--paper);
       overflow: hidden;
     }
+
+    .care h2 {
+      font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+      letter-spacing: 0.04em;
+    }
+
+    .care h2 .wb {
+      text-indent: 0;
+    }
+
+    .quote-source {
+      margin-top: 14px;
+      color: var(--brown);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .guest-notes {
+      margin: 32px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .guest-notes li {
+      padding-left: 18px;
+      border-left: 1px solid var(--line);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.9;
+    }
+
+    .guest-notes li + li { margin-top: 16px; }
+    .access .guest-notes li { font-size: 15px; }
 
     .reviews {
       border-top: 1px solid var(--line);
@@ -394,6 +476,7 @@
       font-family: var(--en);
       font-size: 13px;
       font-weight: 500;
+      font-variant-numeric: lining-nums;
       letter-spacing: 0.24em;
       text-transform: uppercase;
     }
@@ -417,6 +500,34 @@
 
     .space-head {
       max-width: 700px;
+    }
+
+    .space-title {
+      font-family: var(--en);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      letter-spacing: 0.32em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
+      color: var(--ink);
+      font-feature-settings: normal;
+    }
+
+    .space-title-ja {
+      margin-top: 14px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      font-feature-settings: "palt" 1;
+    }
+
+    .space-head .quote-source {
+      margin-top: 10px;
     }
 
     .card-grid-3 {
@@ -523,7 +634,7 @@
       font-family: var(--en);
       font-size: clamp(2rem, 4.4vw, 3.5rem);
       font-weight: 400;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
     }
 
@@ -663,18 +774,17 @@
         min-height: 320px;
       }
 
-      .spot-list li {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 4px;
-      }
-
       .reviews-head {
         display: block;
       }
 
       .slide blockquote {
         font-size: 1rem;
+      }
+
+      .space-title {
+        font-size: 1.375rem;
+        letter-spacing: 0.24em;
       }
 
       .space-card img {
@@ -718,19 +828,15 @@
       <div class="section-inner two-col">
         <div class="text-col">
           <h2 class="section-title"><span class="np">こんな沖縄が</span><span class="np">あったのか</span></h2>
-          <div class="area-copy">
-            <p><span class="wb">海中道路。</span><span class="wb">与勝半島から</span><span class="wb">平安座島まで</span><span class="wb">海の上を</span><span class="wb"><span class="nowrap">4.7km</span>の</span><span class="wb">道路が</span><span class="wb">まっすぐ</span><span class="wb">走る。</span><span class="wb">窓を</span><span class="wb">開けると</span><span class="wb">潮風が</span><span class="wb">入ってくる。</span><span class="wb">その先に</span><span class="wb">宮城島、</span><span class="wb">さらに</span><span class="wb">伊計島。</span><span class="wb">橋で</span><span class="wb">つながる</span><span class="wb">島が</span><span class="wb">つづく。</span></p>
-            <p><span class="wb">宮城島の</span><span class="wb">崖の上に</span><span class="wb">「果報バンタ」が</span><span class="wb">ある。</span><span class="wb">沖縄の</span><span class="wb">言葉で</span><span class="wb">幸せの</span><span class="wb">崖。</span><span class="wb">断崖から</span><span class="wb">見下ろす</span><span class="wb">海は</span><span class="wb">静かで</span><span class="wb">人が</span><span class="wb">いない。</span></p>
-            <p><span class="wb">浜比嘉島には</span><span class="wb">石垣と</span><span class="wb">赤瓦の</span><span class="wb">民家が</span><span class="wb">今も</span><span class="wb">残っている。</span><span class="wb">地元の</span><span class="wb">人が</span><span class="wb">昔から</span><span class="wb">普通に</span><span class="wb">来ていた</span><span class="wb">島。</span></p>
-          </div>
-          <ul class="spot-list">
-            <li><strong>海中道路</strong><span>車20分</span></li>
-            <li><strong>伊計島・宮城島・浜比嘉島</strong><span>車40分（橋でつながる離島群）</span></li>
-            <li><strong>果報バンタ</strong><span>車45分・入場無料</span></li>
-            <li><strong>うるマルシェ</strong><span>車5分</span></li>
-            <li><strong>勝連城跡</strong><span>車10分（世界遺産）</span></li>
-            <li><strong>うるまの闘牛</strong><span>車15分</span></li>
-          </ul>
+          <ol class="route">
+            <li class="route-origin"><span class="route-time">宿から車で</span><span class="route-name">VILLA YASUMIBA</span></li>
+            <li><span class="route-time">5分</span><span class="route-name">うるマルシェ</span><span class="route-note"><span class="wb">うるま市で</span><span class="wb">とれた</span><span class="wb">野菜や</span><span class="wb">魚介が</span><span class="wb">並ぶ</span><span class="wb">直売所。</span><span class="wb">食堂も</span><span class="wb">あります。</span></span></li>
+            <li><span class="route-time">10分</span><span class="route-name">勝連城跡</span><span class="route-note"><span class="wb">世界遺産の</span><span class="wb">城跡。</span></span></li>
+            <li><span class="route-time">15分</span><span class="route-name">うるまの闘牛</span></li>
+            <li><span class="route-time">20分</span><span class="route-name">海中道路</span><span class="route-note"><span class="wb">与勝半島から</span><span class="wb">平安座島まで、</span><span class="wb">海の上を</span><span class="wb"><span class="nowrap">4.7km</span>走る</span><span class="wb">道路。</span></span></li>
+            <li><span class="route-time">40分</span><span class="route-name">浜比嘉島・宮城島・伊計島</span><span class="route-note"><span class="wb">海中道路の</span><span class="wb">先に</span><span class="wb">橋で</span><span class="wb">つながる</span><span class="wb">島が</span><span class="wb">続きます。</span><span class="wb">浜比嘉島には</span><span class="wb">赤瓦と</span><span class="wb">石垣の</span><span class="wb">集落が</span><span class="wb">残っています。</span></span></li>
+            <li><span class="route-time">45分</span><span class="route-name">果報バンタ</span><span class="route-note"><span class="wb">宮城島の</span><span class="wb">「ぬちまーす</span><span class="wb">観光製塩</span><span class="wb">ファクトリー」の</span><span class="wb">敷地に</span><span class="wb">ある</span><span class="wb">展望台。</span><span class="wb">バンタは</span><span class="wb">沖縄の</span><span class="wb">言葉で</span><span class="wb">崖の</span><span class="wb">ことです。</span></span></li>
+          </ol>
         </div>
         <div class="media-col">
           <figure class="photo-frame">
@@ -743,10 +849,12 @@
     <section class="section care">
       <div class="section-inner two-col reverse">
         <div class="text-col">
-          <h2 class="section-title"><span class="np">何も考えずに</span><span class="np">休めた</span></h2>
-          <div class="section-copy">
-            <p><span class="wb">冷蔵庫には</span><span class="wb">ゴーヤと</span><span class="wb">ジュースが</span><span class="wb">入っていて、</span><span class="wb">ミキサーや</span><span class="wb">ボードゲームも</span><span class="wb">用意されている。</span></p>
-          </div>
+          <h2 class="section-title"><span class="wb">「お家のような</span><span class="wb">空間で</span><span class="wb">すごく</span><span class="wb">過ごしやすかったです」</span></h2>
+          <p class="quote-source">Booking.com の口コミより</p>
+          <ul class="guest-notes">
+            <li><span class="wb">「ドリンクも</span><span class="wb">無料で</span><span class="wb">冷蔵庫に</span><span class="wb">入っていたのも</span><span class="wb">嬉しかったです！」</span></li>
+            <li><span class="wb">「チェックインも</span><span class="wb">早めに</span><span class="wb">準備</span><span class="wb">終えてくれて</span><span class="wb">オーナーさんは</span><span class="wb">優しい</span><span class="wb">人だなと</span><span class="wb">思いました！」</span></li>
+          </ul>
         </div>
         <div class="media-col">
           <figure class="photo-frame">
@@ -771,15 +879,11 @@
             </article>
             <article class="slide">
               <div class="review-meta"><span>Booking.com</span><span class="stars">5.0</span></div>
-              <blockquote><span class="wb">「ホストさんとの</span><span class="wb">連絡が</span><span class="wb">とても</span><span class="wb">スムーズだった、</span><span class="wb">いろいろ</span><span class="wb">気を</span><span class="wb">遣ってくださり</span><span class="wb">冷蔵庫の</span><span class="wb">中に</span><span class="wb">かわいい</span><span class="wb">ゴーヤや</span><span class="wb">ジュースの</span><span class="wb">サービスまで </span><span class="wb">朝には</span><span class="wb">スムージーを</span><span class="wb">ミキサーで</span><span class="wb">つくったり、</span><span class="wb">みんなで</span><span class="wb">遊べる</span><span class="wb">ゲームも</span><span class="wb">たくさん</span><span class="wb">あって。</span><span class="wb">できていたら</span><span class="wb">楽しすぎて</span><span class="wb">もっと</span><span class="wb">遊んでました！！」</span></blockquote>
+              <blockquote><span class="wb">「朝には</span><span class="wb">スムージーを</span><span class="wb">ミキサーで</span><span class="wb">つくったり </span><span class="wb">みんなで</span><span class="wb">遊べる</span><span class="wb">ゲームも</span><span class="wb">たくさん</span><span class="wb">あって（中略）</span><span class="wb">できていたら</span><span class="wb">楽しすぎて</span><span class="wb">もっと</span><span class="wb">遊んでました！！」</span></blockquote>
             </article>
             <article class="slide">
               <div class="review-meta"><span>Booking.com</span><span class="stars">5.0</span></div>
-              <blockquote><span class="wb">「お家のような</span><span class="wb">空間で</span><span class="wb">すごく</span><span class="wb">過ごしやすかったです。</span><span class="wb">ドリンクも</span><span class="wb">無料で</span><span class="wb">冷蔵庫に</span><span class="wb">入っていたのも</span><span class="wb">嬉しかったです！ </span><span class="wb">チェックインも</span><span class="wb">早めに</span><span class="wb">準備</span><span class="wb">終えてくれて、</span><span class="wb">オーナーさんは</span><span class="wb">優しい</span><span class="wb">人だなと</span><span class="wb">思いました！」</span></blockquote>
-            </article>
-            <article class="slide">
-              <div class="review-meta"><span>Booking.com</span><span class="stars">5.0</span></div>
-              <blockquote>“The photos are accurate but don't do it justice. It's bigger on the inside than on the outside. I liked it so much that I took lots of pictures inside and out to share with my friends. If I ever visit Uruma in the future, I will definitely try to book this.”</blockquote>
+              <blockquote>“I liked it so much that I took lots of pictures inside and out to share with my friends. If I ever visit Uruma in the future, I will definitely try to book this.”</blockquote>
             </article>
             <article class="slide">
               <div class="review-meta"><span>Google Maps</span><span class="stars">5.0</span></div>
@@ -798,8 +902,10 @@
     <section class="section space">
       <div class="section-inner">
         <div class="space-head">
-          <h2 class="section-title"><span class="np">写真より</span><span class="np">広い</span></h2>
-          <p class="section-copy"><span class="wb">新築で</span><span class="wb">設備は</span><span class="wb">すべて</span><span class="wb">新しい。</span><span class="wb">リビングと</span><span class="wb">キッチン、</span><span class="wb">寝室、</span><span class="wb">浴室を</span><span class="wb">10名で</span><span class="wb">使える。</span><span class="wb">調理器具と</span><span class="wb">ボードゲームも</span><span class="wb">そろっている。</span></p>
+          <h2 class="section-title space-title" lang="en">Bigger on the inside</h2>
+          <p class="space-title-ja"><span class="np">外から見るより</span><span class="np">中のほうが広い</span></p>
+          <p class="quote-source">Booking.com の口コミより</p>
+          <p class="section-copy"><span class="wb">リビングと</span><span class="wb">キッチン、</span><span class="wb">寝室、</span><span class="wb">浴室を</span><span class="wb">10名で</span><span class="wb">使えます。</span><span class="wb">設備は</span><span class="wb">新しく、</span><span class="wb">調理器具と</span><span class="wb">ボードゲームも</span><span class="wb">そろっています。</span></p>
         </div>
         <div class="card-grid-3">
           <article class="space-card">
@@ -832,6 +938,11 @@
             <li><strong>Googleマップ</strong><a href="https://maps.app.goo.gl/DzYAKemADFCuFaQC7" target="_blank" rel="noopener">Googleマップで開く</a></li>
             <li><strong>駐車場</strong><span>2台・無料</span></li>
           </ul>
+          <ul class="guest-notes">
+            <li><span class="wb">「住宅街という</span><span class="wb">感じですが</span><span class="wb">私達の</span><span class="wb">目的地に</span><span class="wb">近くて</span><span class="wb">歩いて</span><span class="wb">行けました、</span><span class="wb">うるま市エイサー祭り</span><span class="wb">最高でした。」</span></li>
+            <li><span class="wb">「近場に</span><span class="wb">飲食店も</span><span class="wb">たくさん</span><span class="wb">あるので</span><span class="wb">助かりました。」</span></li>
+          </ul>
+          <p class="quote-source">Booking.com の口コミより</p>
         </div>
         <div class="media-col map-wrap">
           <!-- Googleマップ埋め込み（iframeで地図表示） -->
