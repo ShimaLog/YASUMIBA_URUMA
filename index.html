@@ -993,6 +993,20 @@
     .journey-description .route-note { max-width: none; margin-top: 0; font-size: 16px; }
     .journey-description .route-note > p { max-width: none; margin: 0; }
     .journey-description .route-note > img { margin-top: 12px; width: 100%; max-width: 480px; aspect-ratio: 3 / 2; object-fit: cover; display: block; border: 0; border-radius: 0; box-shadow: none; }
+    #journey-1-2 .route-photos { position: relative; margin-top: 12px; width: 100%; max-width: 480px; aspect-ratio: 3 / 2; cursor: pointer; touch-action: pan-y pinch-zoom; }
+    #journey-1-2 .route-photos img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 0; border-radius: 0; box-shadow: none; opacity: 1; transition: opacity 300ms; }
+    #journey-1-2 .route-photos img[aria-hidden="true"] { opacity: 0; pointer-events: none; }
+    #journey-1-2 .route-photo-count { position: absolute; right: 8px; bottom: 8px; z-index: 1; padding: 4px 8px; background: rgba(28,28,26,.55); color: #fff; font-family: var(--en); font-size: 12px; pointer-events: none; }
+    #journey-1-2 .route-photo-thumbnails { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; width: 100%; max-width: 480px; margin-top: 8px; }
+    #journey-1-2 .route-photo-thumbnails button { min-width: 0; padding: 0; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; opacity: .55; cursor: pointer; }
+    #journey-1-2 .route-photo-thumbnails button img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 0; border-radius: 0; box-shadow: none; }
+    #journey-1-2 .route-photo-thumbnails button[aria-pressed="true"] { opacity: 1; border-bottom-color: var(--ink); }
+    #journey-1-2 .route-photo-thumbnails button:hover { opacity: .85; }
+    #journey-1-2 .route-photo-thumbnails button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+    #journey-1-2 .route-photo-label { color: var(--brown); font-size: 13px; }
+    @media (prefers-reduced-motion: reduce) {
+      #journey-1-2 .route-photos img { transition: none; }
+    }
     .station:focus-visible, .events-tabs button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
     .events { background: var(--base); }
     .events-tabs { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 28px; margin-top: 32px; border-bottom: 1px solid var(--line); }
@@ -1159,7 +1173,24 @@
                 </div>
                 <div class="route-note" id="journey-1-2" hidden>
                   <p><span class="wb">宮城島の</span><span class="wb">「ぬちまーす</span><span class="wb">観光製塩</span><span class="wb">ファクトリー」の</span><span class="wb">敷地にある</span><span class="wb">展望台。</span><span class="wb">バンタは</span><span class="wb">沖縄の言葉で</span><span class="wb">崖のことです。</span></p>
-                  <img src="photos/spots/miyagi-nuchimasu-view.jpg" alt="宮城島から見た海" width="1200" height="800" loading="lazy" decoding="async">
+                  <div class="route-photos">
+                    <img src="photos/spots/kafu-banta-view.jpg" alt="果報バンタ" width="1200" height="800" loading="lazy" decoding="async" aria-hidden="false">
+                    <img src="photos/spots/miyagi-nuchimasu-view.jpg" alt="カフェからの景色" width="1200" height="800" loading="lazy" decoding="async" aria-hidden="true" inert>
+                    <img src="photos/spots/nuchimasu-cafe.jpg" alt="ぬちまーすカフェ" width="1200" height="800" loading="lazy" decoding="async" aria-hidden="true" inert>
+                    <span class="route-photo-count" aria-live="polite">1 / 3</span>
+                  </div>
+                  <div class="route-photo-thumbnails">
+                    <button type="button" aria-pressed="true" aria-label="果報バンタ">
+                      <img src="photos/spots/kafu-banta-view.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async">
+                    </button>
+                    <button type="button" aria-pressed="false" aria-label="カフェからの景色">
+                      <img src="photos/spots/miyagi-nuchimasu-view.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async">
+                    </button>
+                    <button type="button" aria-pressed="false" aria-label="ぬちまーすカフェ">
+                      <img src="photos/spots/nuchimasu-cafe.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async">
+                    </button>
+                  </div>
+                  <div class="route-photo-label">果報バンタ</div>
                 </div>
                 <p class="route-note" id="journey-1-3" hidden><span class="wb">宮城島と</span><span class="wb">伊計大橋で</span><span class="wb">つながる島。</span></p>
               </div>
@@ -1710,6 +1741,49 @@
           });
         });
       });
+      var kafuNote = document.getElementById('journey-1-2');
+      if (kafuNote) {
+        var photoFrame = kafuNote.querySelector('.route-photos');
+        var photos = Array.from(photoFrame.querySelectorAll('img'));
+        var photoThumbnails = Array.from(kafuNote.querySelectorAll('.route-photo-thumbnails button'));
+        var photoCount = kafuNote.querySelector('.route-photo-count');
+        var photoLabel = kafuNote.querySelector('.route-photo-label');
+        var photoIndex = 0;
+        var touchStart;
+        var swipeTime = 0;
+        function selectPhoto(index) {
+          index = (index + photos.length) % photos.length;
+          photoIndex = index;
+          photoCount.textContent = (index + 1) + ' / ' + photos.length;
+          photoLabel.textContent = photoThumbnails[index].getAttribute('aria-label');
+          photos.forEach(function (photo, position) {
+            var active = position === index;
+            photo.setAttribute('aria-hidden', String(!active));
+            photo.inert = !active;
+            photoThumbnails[position].setAttribute('aria-pressed', String(active));
+          });
+        }
+        photoThumbnails.forEach(function (button, index) {
+          button.addEventListener('click', function () { selectPhoto(index); });
+        });
+        photoFrame.addEventListener('click', function () {
+          if (Date.now() - swipeTime > 500) selectPhoto(photoIndex + 1);
+        });
+        photoFrame.addEventListener('touchstart', function (event) {
+          touchStart = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+        }, { passive: true });
+        photoFrame.addEventListener('touchend', function (event) {
+          if (!touchStart) return;
+          var dx = event.changedTouches[0].clientX - touchStart.x;
+          var dy = event.changedTouches[0].clientY - touchStart.y;
+          touchStart = null;
+          if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy)) {
+            swipeTime = Date.now();
+            selectPhoto(photoIndex + (dx < 0 ? 1 : -1));
+          }
+        }, { passive: true });
+        photoFrame.addEventListener('touchcancel', function () { touchStart = null; }, { passive: true });
+      }
       var journeys = document.querySelector('.journeys');
       var dotAnimations = [];
       var dotTimers = [];
