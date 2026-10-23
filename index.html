@@ -398,15 +398,34 @@
       margin-bottom: 30px;
     }
 
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      align-items: start;
-      gap: 12px;
+    .slider-track {
+      overflow: hidden;
+      position: relative;
+      transition: height .3s ease;
     }
 
-    @media (min-width: 921px) {
-      .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .slider {
+      display: flex;
+      align-items: flex-start;
+      transition: transform 0.36s ease;
+    }
+
+    .slide {
+      flex-shrink: 0;
+    }
+
+    .slider-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0;
     }
 
     .slider-arrow {
@@ -448,6 +467,33 @@
       opacity: 0.25;
       cursor: default;
     }
+
+    .slider-dot {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      min-height: 0;
+      margin-inline: -5.5px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .slider-dot::before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      background: var(--line);
+      transform: translate(-50%, -50%);
+      transition: background 0.2s;
+    }
+
+    .slider-dot.active::before { background: var(--accent); }
 
     .slide {
       display: grid;
@@ -608,6 +654,11 @@
       z-index: 950;
       display: flex;
       align-items: center;
+      padding: 0 4px;
+      border-radius: 0;
+      background: rgba(28,28,26,.5);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
       color: #fff;
       font-family: var(--en);
       font-size: 13px;
@@ -622,7 +673,23 @@
       min-width: 44px;
       min-height: 44px;
     }
-    .language-switch a { text-decoration: underline; text-underline-offset: 4px; }
+    .language-switch [aria-current] {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+    }
+    .language-switch a {
+      color: rgba(255,255,255,.72);
+      text-decoration: none;
+    }
+    .language-switch a:hover,
+    .language-switch a:focus-visible { color: #fff; }
+    .language-switch a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: -4px;
+    }
+    .language-switch [aria-hidden] { color: rgba(255,255,255,.5); }
     @media (max-width: 640px) {
       .language-switch { top: 16px; right: 16px; }
     }
@@ -1058,7 +1125,7 @@
           </div>
         </div>
         <div class="rating-breakdown">
-          <div class="rating-total"><span>9.4</span><p>Booking.com・クチコミ63件</p></div>
+          <div class="rating-total"><span>9.4</span><p>Booking.com</p></div>
           <div class="rating-grid">
             <div class="rating-row"><span>清潔さ</span><span class="rating-bar"><span style="--score: 95%; --delay: 0ms"></span></span><span class="rating-value">9.5</span></div>
             <div class="rating-row"><span>快適さ</span><span class="rating-bar"><span style="--score: 95%; --delay: 80ms"></span></span><span class="rating-value">9.5</span></div>
@@ -1068,31 +1135,46 @@
             <div class="rating-row"><span>お得感</span><span class="rating-bar"><span style="--score: 96%; --delay: 400ms"></span></span><span class="rating-value">9.6</span></div>
           </div>
         </div>
-        <div class="reviews-grid">
-          <article class="slide">
+        <div class="slider-track">
+          <div class="slider" id="reviewSlider">
+            <article class="slide">
               <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">お家のような</span><span class="wb">空間で</span><span class="wb">すごく</span><span class="wb">過ごしやすかったです。</span></blockquote>
             </article>
-          <article class="slide">
+            <article class="slide">
               <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">部屋も</span><span class="wb">寝室として</span><span class="wb">使えるのが</span><span class="wb">3部屋も</span><span class="wb">あるので</span><span class="wb">三世代で</span><span class="wb">利用でき</span><span class="wb">大変</span><span class="wb">ありがたい</span><span class="wb">場所です。</span></blockquote>
             </article>
-          <article class="slide">
+            <article class="slide">
               <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">子供向けの</span><span class="wb">玩具や</span><span class="wb">絵本もあり</span><span class="wb">子供達が</span><span class="wb">大喜びでした。</span></blockquote>
             </article>
-          <article class="slide">
+            <article class="slide">
               <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">みんなで</span><span class="wb">遊べる</span><span class="wb">ゲームも</span><span class="wb">たくさんあって</span><span class="wb">（中略）</span><span class="wb">できていたら</span><span class="wb">楽しすぎて</span><span class="wb">もっと</span><span class="wb">遊んでました！！</span></blockquote>
             </article>
-          <article class="slide">
+            <article class="slide">
+              <div class="review-meta"><span>Booking.com</span></div>
+              <blockquote><span class="wb">立地も</span><span class="wb">海中道路が</span><span class="wb">近いので</span><span class="wb">シュノーケルが</span><span class="wb">好きな</span><span class="wb">私には</span><span class="wb">最高な</span><span class="wb">場所です。</span></blockquote>
+            </article>
+            <article class="slide">
               <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">宿泊先は</span><span class="wb">内外とても</span><span class="wb">綺麗で</span><span class="wb">（中略）</span><span class="wb">コンドミニアムとしては</span><span class="wb">今までで</span><span class="wb">No.1です。</span></blockquote>
             </article>
-          <article class="slide">
+            <article class="slide">
+              <div class="review-meta"><span>Booking.com</span></div>
+              <blockquote><span class="wb">期待以上でした！</span><span class="wb">（中略）</span><span class="wb">ゆっくり</span><span class="wb">できました！</span></blockquote>
+            </article>
+            <article class="slide">
               <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">綺麗に</span><span class="wb">清掃されていたこと。</span></blockquote>
             </article>
+          </div>
+        </div>
+        <div class="slider-nav">
+          <button class="slider-arrow" id="sliderPrev" aria-label="前の口コミ">&#8249;</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-arrow" id="sliderNext" aria-label="次の口コミ">&#8250;</button>
         </div>
       </div>
     </section>
@@ -1149,10 +1231,81 @@
     <p class="dialog-counter" aria-live="polite"></p>
   </dialog>
   <div class="fixed-cta">
-    <div class="fixed-cta-info"><span>Booking.com 9.4（63件）</span><span>1棟貸切・最大9名</span></div>
+    <div class="fixed-cta-info"><span>Booking.com 9.4</span><span>1棟貸切・最大9名</span></div>
     <a class="button cta" data-cta="fixed" href="https://www.booking.com/hotel/jp/yasumiba.ja.html" target="_blank" rel="noopener"><span class="fixed-label-pc">Booking.com で空き日程を確認する</span><span class="fixed-label-sp">空き日程を見る</span></a>
   </div>
   <script>
+    (function () {
+      var track = document.querySelector('.slider-track');
+      var slider = document.getElementById('reviewSlider');
+      var dotsContainer = document.getElementById('sliderDots');
+      var prevBtn = document.getElementById('sliderPrev');
+      var nextBtn = document.getElementById('sliderNext');
+      if (!slider || !track) return;
+
+      var slides = slider.querySelectorAll('.slide');
+      var total = slides.length;
+      var current = 0;
+      var startX = 0;
+
+      function setWidths() {
+        var w = track.offsetWidth;
+        slider.style.width = (w * total) + 'px';
+        slides.forEach(function (s) {
+          s.style.width = w + 'px';
+        });
+        render();
+      }
+
+      function render() {
+        var w = track.offsetWidth;
+        slider.style.transform = 'translateX(-' + (current * w) + 'px)';
+        track.style.height = slides[current].offsetHeight + 'px';
+        dotsContainer.querySelectorAll('.slider-dot').forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === total - 1;
+      }
+
+      function goTo(i) {
+        current = Math.max(0, Math.min(i, total - 1));
+        render();
+      }
+
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', (i + 1) + '枚目');
+        dot.addEventListener('click', function () { goTo(i); });
+        dotsContainer.appendChild(dot);
+      });
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+      document.addEventListener('keydown', function (e) {
+        if (document.querySelector('.gallery-dialog').open) return;
+        if (e.key === 'ArrowLeft') goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+      });
+
+      slider.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      slider.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+      }, { passive: true });
+
+      window.addEventListener('resize', setWidths);
+      window.addEventListener('load', setWidths);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setWidths);
+      }
+      setWidths();
+    })();
     (function () {
       document.querySelectorAll('a[data-cta]').forEach(function (link) {
         link.addEventListener('click', function () {
