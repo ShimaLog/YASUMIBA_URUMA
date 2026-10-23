@@ -991,6 +991,8 @@
     .journey-description { margin-top: 12px; }
     .journey-description [hidden], .events [hidden] { display: none; }
     .journey-description .route-note { max-width: none; margin-top: 0; font-size: 16px; }
+    .journey-description .route-note > p { max-width: none; margin: 0; }
+    .journey-description .route-note > img { margin-top: 12px; width: 100%; max-width: 480px; aspect-ratio: 3 / 2; object-fit: cover; display: block; border: 0; border-radius: 0; box-shadow: none; }
     .station:focus-visible, .events-tabs button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
     .events { background: var(--base); }
     .events-tabs { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 28px; margin-top: 32px; border-bottom: 1px solid var(--line); }
@@ -1151,8 +1153,14 @@
               </div>
               <div class="journey-description" aria-live="polite">
                 <p class="route-note" id="journey-1-0"><span class="wb">与勝半島から</span><span class="wb">平安座島まで、</span><span class="wb">海の上を</span><span class="nowrap">4.7km走る道路。</span></p>
-                <p class="route-note" id="journey-1-1" hidden><span class="wb">海中道路の先に</span><span class="wb">橋でつながる島。</span><span class="wb">赤瓦と</span><span class="wb">石垣の集落が</span><span class="wb">残っています。</span></p>
-                <p class="route-note" id="journey-1-2" hidden><span class="wb">宮城島の</span><span class="wb">「ぬちまーす</span><span class="wb">観光製塩</span><span class="wb">ファクトリー」の</span><span class="wb">敷地にある</span><span class="wb">展望台。</span><span class="wb">バンタは</span><span class="wb">沖縄の言葉で</span><span class="wb">崖のことです。</span></p>
+                <div class="route-note" id="journey-1-1" hidden>
+                  <p><span class="wb">海中道路の先に</span><span class="wb">橋でつながる島。</span><span class="wb">赤瓦と</span><span class="wb">石垣の集落が</span><span class="wb">残っています。</span></p>
+                  <img src="photos/spots/hamahiga-cave.jpg" alt="浜比嘉島の岩場" width="1200" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="route-note" id="journey-1-2" hidden>
+                  <p><span class="wb">宮城島の</span><span class="wb">「ぬちまーす</span><span class="wb">観光製塩</span><span class="wb">ファクトリー」の</span><span class="wb">敷地にある</span><span class="wb">展望台。</span><span class="wb">バンタは</span><span class="wb">沖縄の言葉で</span><span class="wb">崖のことです。</span></p>
+                  <img src="photos/spots/miyagi-nuchimasu-view.jpg" alt="宮城島から見た海" width="1200" height="800" loading="lazy" decoding="async">
+                </div>
                 <p class="route-note" id="journey-1-3" hidden><span class="wb">宮城島と</span><span class="wb">伊計大橋で</span><span class="wb">つながる島。</span></p>
               </div>
             </div>
@@ -1163,8 +1171,14 @@
                 <button type="button" class="station" aria-expanded="false" aria-controls="journey-2-1"><span class="station-time station-time-wrap">高速船orフェリー</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">津堅島</span></button>
               </div>
               <div class="journey-description" aria-live="polite">
-                <p class="route-note" id="journey-2-0"><span class="wb">津堅島へ渡る</span><span class="wb">船が出る港。</span></p>
-                <p class="route-note" id="journey-2-1" hidden><span class="wb">平敷屋港から</span><span class="wb">フェリーで30分、</span><span class="wb">高速船で15分</span></p>
+                <div class="route-note" id="journey-2-0">
+                  <p><span class="wb">津堅島へ渡る</span><span class="wb">船が出る港。</span></p>
+                  <img src="photos/spots/heshikiya-ferry.jpg" alt="津堅島へ向かう高速船の船内" width="1200" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="route-note" id="journey-2-1" hidden>
+                  <p><span class="wb">平敷屋港から</span><span class="wb">フェリーで30分、</span><span class="wb">高速船で15分</span></p>
+                  <img src="photos/spots/tsuken.jpg" alt="津堅島の浜" width="1200" height="800" loading="lazy" decoding="async">
+                </div>
               </div>
             </div>
           </div>
