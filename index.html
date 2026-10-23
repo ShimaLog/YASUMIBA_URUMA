@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VILLA YASUMIBA Okinawa Uruma | 東海岸にはあなたが知らない沖縄がある</title>
-  <meta name="description" content="沖縄県うるま市の一棟貸し、Independent House 沖縄VILLA YASUMIBA Okinawa Uruma。海中道路や離島へ向かう東海岸の滞在拠点。">
+  <title>VILLA YASUMIBA｜沖縄・うるま市の一棟貸し（最大9名）</title>
+  <meta name="description" content="沖縄県うるま市の住宅街にある2階建ての一棟貸し。最大9名・寝室3部屋・駐車場無料。海中道路まで車20分。予約はBooking.comから。">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://yasumiba-okinawa-uruma.com/">
   <link rel="alternate" hreflang="ja" href="https://yasumiba-okinawa-uruma.com/">
@@ -12,8 +12,8 @@
   <link rel="alternate" hreflang="x-default" href="https://yasumiba-okinawa-uruma.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yasumiba-okinawa-uruma.com/">
-  <meta property="og:title" content="VILLA YASUMIBA Okinawa Uruma | 東海岸にはあなたが知らない沖縄がある">
-  <meta property="og:description" content="沖縄県うるま市の一棟貸し、Independent House 沖縄VILLA YASUMIBA Okinawa Uruma。海中道路や離島へ向かう東海岸の滞在拠点。">
+  <meta property="og:title" content="VILLA YASUMIBA｜沖縄・うるま市の一棟貸し（最大9名）">
+  <meta property="og:description" content="沖縄県うるま市の住宅街にある2階建ての一棟貸し。最大9名・寝室3部屋・駐車場無料。海中道路まで車20分。予約はBooking.comから。">
   <meta property="og:image" content="https://yasumiba-okinawa-uruma.com/photos/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -275,34 +275,6 @@
       object-fit: cover;
     }
 
-    .route {
-      margin: 34px 0 0;
-      padding: 0 0 0 22px;
-      list-style: none;
-    }
-
-    .route li { position: relative; }
-    .route li + li { margin-top: 28px; }
-    .route li::before {
-      content: "";
-      position: absolute;
-      top: 9px;
-      left: -22px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-    .route li:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 16px;
-      bottom: -37px;
-      left: -19px;
-      width: 1px;
-      background: var(--line);
-    }
-
     .route-time {
       display: block;
       color: var(--accent);
@@ -310,34 +282,6 @@
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.14em;
-    }
-
-    .route-origin .route-time { font-size: 12px; }
-    .route .route-origin::before {
-      top: 7px;
-      left: -24px;
-      width: 11px;
-      height: 11px;
-      background: var(--ink);
-    }
-
-    .route-name {
-      display: block;
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: clamp(1.125rem, 1.6vw, 1.375rem);
-      font-weight: 500;
-      font-feature-settings: "palt" 1;
-      letter-spacing: 0.04em;
-    }
-
-    .route-origin .route-name {
-      color: var(--ink);
-      font-family: var(--en);
-      font-size: clamp(1.125rem, 1.6vw, 1.375rem);
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
     }
 
     .route-note {
@@ -358,12 +302,15 @@
       .sleeping-list { max-width: 560px; }
     }
 
-    .quote-source {
-      margin-top: 14px;
+    .guest-notes-label {
+      margin: 32px 0 0;
       color: var(--brown);
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: .12em;
     }
+
+    .guest-notes-label + .guest-notes { margin-top: 12px; }
 
     .guest-notes {
       margin: 32px 0 0;
@@ -506,20 +453,6 @@
       box-sizing: border-box;
     }
 
-    .review-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      color: var(--accent);
-      font-family: var(--en);
-      font-size: 13px;
-      font-weight: 500;
-      font-variant-numeric: lining-nums;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
     .slide blockquote {
       font-family: var(--serif);
       font-size: clamp(1.05rem, 1.6vw, 1.375rem);
@@ -557,10 +490,6 @@
       letter-spacing: 0.08em;
       color: var(--ink);
       font-feature-settings: "palt" 1;
-    }
-
-    .space-head .quote-source {
-      margin-top: 10px;
     }
 
     .access {
@@ -873,18 +802,15 @@
     }
 
     .neighborhood { margin-top: 34px; }
-    .neighborhood .route-time { font-size: 12px; }
-    .neighborhood + .route { margin-top: 48px; }
-    .season-list { margin: 40px 0 0; border-top: 1px solid var(--line); }
-    .season-list > div, .sleeping-list > div {
+    .neighborhood .route-time { font-size: 13px; }
+    .sleeping-list > div {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
       gap: 16px;
       padding: 16px 0;
       border-bottom: 1px solid var(--line);
     }
-    .season-list dd, .sleeping-list dd { margin: 0; }
-    .season-list { font-size: 14px; }
+    .sleeping-list dd { margin: 0; }
     .space-summary {
       margin-top: 32px;
       padding: 18px 0;
@@ -968,7 +894,6 @@
     @media (max-width: 920px) {
       body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
       .site-footer { padding-bottom: 48px; }
-      .neighborhood + .route { margin-top: 40px; }
       .gallery-strip { height: 360px; }
       .gallery-toolbar .slider-arrow { display: none; }
       .rating-grid { grid-template-columns: minmax(0, 1fr); }
@@ -987,6 +912,113 @@
       .fixed-label-pc { display: none; }
       .fixed-label-sp { display: inline; }
     }
+
+    .journeys { margin-top: 48px; }
+    .journey { margin-top: 24px; min-width: 0; }
+    .journey + .journey { margin-top: 32px; }
+    .journey-title { margin: 0; font-weight: 500; line-height: 1.55; color: var(--ink); font-family: var(--sans); font-size: 14px; letter-spacing: .12em; }
+    .journey-stations { display: grid; grid-template-columns: repeat(var(--stations), minmax(0, 1fr)); margin-top: 12px; }
+    .station { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; min-height: 44px; padding: 0 2px; border: 0; border-radius: 0; background: transparent; color: var(--ink); cursor: pointer; }
+    .station:not(:last-child)::after { content: ""; position: absolute; top: 32.75px; left: 50%; width: 100%; border-top: 1.5px solid var(--ink); }
+    .station-time { font-family: var(--en); font-size: 15px; font-weight: 500; line-height: 20px; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .station-dot { position: relative; z-index: 1; flex-shrink: 0; width: 11px; height: 11px; margin: 8px 0; border: 1px solid var(--ink); border-radius: 50%; background: var(--paper); }
+    .station[aria-expanded="true"] .station-dot { background: var(--ink); }
+    .station-name { font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.6; letter-spacing: 0; text-align: center; word-break: normal; overflow-wrap: normal; line-break: strict; }
+    .journeys-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+    .journeys-heading .route-time { font-size: 13px; }
+    .journeys-hint { font-size: 13px; color: var(--brown); }
+    .journeys-islands { margin: 36px 0 16px; font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); }
+    .journeys-islands + .journey { margin-top: 0; }
+    .station-name { text-decoration: underline dotted; text-underline-offset: 4px; text-decoration-color: var(--brown); }
+    .station[aria-expanded="true"] .station-name { text-decoration: underline solid; text-decoration-color: var(--ink); }
+    .station:focus-visible .station-dot { border-color: var(--accent); }
+    .station:focus-visible .station-name { text-decoration-style: solid; }
+    @media (hover: hover) and (pointer: fine) {
+      .station:hover .station-dot { border-color: var(--accent); }
+      .station:hover .station-name { text-decoration-style: solid; }
+    }
+    .journey-stations-boat .station-time { min-height: 40px; display: flex; align-items: center; justify-content: center; }
+    .journey-stations-boat .station:not(:last-child)::after { top: 52.75px; }
+    .station-time-wrap { white-space: normal; text-align: center; }
+    .section.access .access-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(34px, 6vw, 72px);
+      align-items: stretch;
+    }
+    .section.access .access-top > * { min-width: 0; }
+    .section.access .access-details {
+      margin-top: 24px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .section.access .access-rules {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px 32px;
+    }
+    .section.access .access-rules li {
+      align-content: start;
+      align-self: start;
+    }
+    .section.access .access-details .guest-notes-label {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      max-width: none;
+    }
+    .section.access .access-details .guest-notes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+    }
+    .section.access .access-details .guest-notes li + li { margin-top: 0; }
+    @media (min-width: 921px) {
+      .section.access .access-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .section.access .access-card { min-height: 420px; }
+      .section.access .map-wrap { position: relative; min-height: 420px; }
+      .section.access .map-wrap iframe { position: absolute; inset: 0; height: 100%; min-height: 0; }
+    }
+    @media (min-width: 641px) and (max-width: 920px) {
+      .section.access .access-rules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .section.access .access-rules,
+      .section.access .access-details .guest-notes { grid-template-columns: minmax(0, 1fr); }
+      .section.access .access-details .guest-notes { gap: 16px; }
+    }
+    .journey-description { margin-top: 12px; }
+    .journey-description [hidden], .events [hidden] { display: none; }
+    .journey-description .route-note { max-width: none; margin-top: 0; font-size: 16px; }
+    .station:focus-visible, .events-tabs button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+    .events { background: var(--base); }
+    .events-tabs { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 28px; margin-top: 32px; border-bottom: 1px solid var(--line); }
+    .events-tabs button { position: relative; min-width: 0; min-height: 48px; padding: 12px 0 18px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; color: var(--brown); font-family: var(--sans); font-size: 14px; letter-spacing: .12em; cursor: pointer; scroll-snap-align: start; }
+    .events-tabs button:not(:disabled)::after { content: ""; position: absolute; bottom: 7px; left: calc(50% - 2px); width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+    .events-tabs button:disabled { color: var(--line); cursor: default; }
+    .events-tabs [aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+    .current-month { position: absolute; top: -24px; left: 50%; transform: translateX(-50%); white-space: nowrap; color: var(--accent); font-size: 12px; letter-spacing: 0; }
+    .events-panel { margin-top: 28px; max-width: 720px; }
+    .event + .event { margin-top: 24px; }
+    .event h3 { color: var(--ink); font-family: var(--serif); font-size: 16px; }
+    .event p { max-width: none; color: var(--brown); font-size: 13px; }
+    .events-note { margin-top: 28px; max-width: none; color: var(--brown); font-size: 12px; }
+    .faq-list { max-width: 720px; margin-top: 32px; border-top: 1px solid var(--line); }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary { position: relative; min-height: 44px; padding: 18px 32px 18px 0; color: var(--ink); font-family: var(--serif); font-size: 16px; list-style: none; cursor: pointer; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::marker { content: ""; }
+    .faq summary::after { content: "＋"; position: absolute; top: 18px; right: 0; color: var(--brown); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details > p { padding-bottom: 18px; max-width: none; }
+    @media (max-width: 920px) { .journeys { margin-top: 40px; } }
+    @media (max-width: 640px) {
+      .journey + .journey { margin-top: 28px; }
+      .journey-stations[style="--stations: 4"] .station-name { font-size: 14px; font-weight: 500; }
+      .events-tabs { display: flex; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; }
+      .events-tabs::-webkit-scrollbar { display: none; }
+      .events-tabs button { flex: 0 0 60px; }
+    }
   </style>
   <script>
     window.YASUMIBA_GA_ID = 'G-S92D8W9E0G';
@@ -1002,6 +1034,44 @@
       gtag('js', new Date());
       gtag('config', id);
     })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "VILLA YASUMIBA Okinawa Uruma",
+  "url": "https://yasumiba-okinawa-uruma.com/",
+  "image": "https://yasumiba-okinawa-uruma.com/photos/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "904-2221",
+    "addressRegion": "沖縄県",
+    "addressLocality": "うるま市",
+    "streetAddress": "平良川306-9",
+    "addressCountry": "JP"
+  },
+  "hasMap": "https://maps.app.goo.gl/DzYAKemADFCuFaQC7",
+  "checkinTime": "16:00",
+  "checkoutTime": "10:00",
+  "numberOfRooms": 3,
+  "petsAllowed": false,
+  "smokingAllowed": false,
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "無料駐車場（普通車2台・軽自動車3台）",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "キッチン",
+      "value": true
+    }
+  ],
+  "sameAs": [
+    "https://www.booking.com/hotel/jp/yasumiba.ja.html"
+  ]
+}
   </script>
 </head>
 <body>
@@ -1047,26 +1117,56 @@
           <h2 class="section-title"><span class="np">こんな沖縄が</span><span class="np">あったのか</span></h2>
           <div class="neighborhood">
             <h3 class="route-time">宿のまわり</h3>
-            <p class="route-note"><span class="wb">住宅街の中にあり、</span><span class="wb">歩ける範囲に</span><span class="wb">飲食店と</span><span class="wb">スーパーがあります。</span></p>
+            <p class="route-note"><span class="wb">徒歩10分圏内に</span><span class="wb">飲食店と</span><span class="wb">スーパーあり</span></p>
+            <p class="guest-notes-label">宿泊者のお声</p>
             <ul class="guest-notes">
-              <li><span class="wb">コンビニ、</span><span class="wb">スーパー、</span><span class="wb">居酒屋も</span><span class="wb">近くにあり、</span><span class="wb">便利でした。</span></li>
-              <li><span class="wb">必要な物は</span><span class="wb">何でも</span><span class="wb">揃っており、</span><span class="wb">長期滞在には</span><span class="wb">もってこいの</span><span class="wb">場所でした。</span></li>
+              <li><span class="wb">「コンビニ、</span><span class="wb">スーパー、</span><span class="wb">居酒屋も</span><span class="wb">近くにあり、</span><span class="wb">便利でした。」</span></li>
+              <li><span class="wb">「必要な物は</span><span class="wb">何でも</span><span class="wb">揃っており、</span><span class="wb">長期滞在には</span><span class="wb">もってこいの</span><span class="wb">場所でした。」</span></li>
             </ul>
-            <p class="quote-source">Booking.com の口コミより</p>
           </div>
-          <ol class="route">
-            <li class="route-origin"><span class="route-time">宿から車で</span><span class="route-name">VILLA YASUMIBA</span></li>
-            <li><span class="route-time">5分</span><span class="route-name">うるマルシェ</span><span class="route-note"><span class="wb">うるま市で</span><span class="wb">とれた</span><span class="wb">野菜や</span><span class="wb">魚介が</span><span class="wb">並ぶ</span><span class="wb">直売所。</span><span class="wb">食堂も</span><span class="wb">あります。</span></span></li>
-            <li><span class="route-time">10分</span><span class="route-name">勝連城跡</span><span class="route-note"><span class="wb">世界遺産の</span><span class="wb">城跡。</span></span></li>
-            <li><span class="route-time">15分</span><span class="route-name">うるまの闘牛</span></li>
-            <li><span class="route-time">20分</span><span class="route-name">海中道路</span><span class="route-note"><span class="wb">与勝半島から</span><span class="wb">平安座島まで、</span><span class="wb">海の上を</span><span class="wb"><span class="nowrap">4.7km</span>走る</span><span class="wb">道路。</span></span></li>
-            <li><span class="route-time">40分</span><span class="route-name">浜比嘉島・宮城島・伊計島</span><span class="route-note"><span class="wb">海中道路の</span><span class="wb">先に</span><span class="wb">橋で</span><span class="wb">つながる</span><span class="wb">島が</span><span class="wb">続きます。</span><span class="wb">浜比嘉島には</span><span class="wb">赤瓦と</span><span class="wb">石垣の</span><span class="wb">集落が</span><span class="wb">残っています。</span></span></li>
-            <li><span class="route-time">45分</span><span class="route-name">果報バンタ</span><span class="route-note"><span class="wb">宮城島の</span><span class="wb">「ぬちまーす</span><span class="wb">観光製塩</span><span class="wb">ファクトリー」の</span><span class="wb">敷地に</span><span class="wb">ある</span><span class="wb">展望台。</span><span class="wb">バンタは</span><span class="wb">沖縄の</span><span class="wb">言葉で</span><span class="wb">崖の</span><span class="wb">ことです。</span></span></li>
-          </ol>
-          <dl class="season-list">
-            <div><dt>9月</dt><dd>うるま市エイサーまつり</dd></div>
-            <div><dt>2月</dt><dd>阪神タイガース2軍の春季キャンプ（具志川野球場）</dd></div>
-          </dl>
+          <div class="journeys">
+            <div class="journeys-heading"><h3 class="route-time">宿から車で</h3><span class="journeys-hint">地名を押すと説明が出ます</span></div>
+            <div class="journey">
+              <h4 class="journey-title">宿の近く</h4>
+              <div class="journey-stations" style="--stations: 3">
+                <button type="button" class="station" aria-expanded="true" aria-controls="journey-0-0"><span class="station-time">10分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">うるマルシェ</span></button>
+                <button type="button" class="station" aria-expanded="false" aria-controls="journey-0-1"><span class="station-time">15分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">勝連城跡</span></button>
+                <button type="button" class="station" aria-expanded="false" aria-controls="journey-0-2"><span class="station-time">30分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">闘牛場</span></button>
+              </div>
+              <div class="journey-description" aria-live="polite">
+                <p class="route-note" id="journey-0-0"><span class="wb">うるま市で</span><span class="wb">とれた</span><span class="wb">野菜や</span><span class="wb">魚介が</span><span class="wb">並ぶ</span><span class="wb">直売所。</span><span class="wb">食堂も</span><span class="wb">あります。</span></p>
+                <p class="route-note" id="journey-0-1" hidden><span class="wb">世界遺産の</span><span class="wb">城跡。</span></p>
+                <p class="route-note" id="journey-0-2" hidden><span class="wb">うるま市</span><span class="wb">石川多目的ドームの</span><span class="wb">闘牛場。</span><span class="wb">開催日は</span><span class="wb">下の行事に</span><span class="wb">載せています。</span></p>
+              </div>
+            </div>
+            <h3 class="journeys-islands">うるま市の魅力的な離島</h3>
+            <div class="journey">
+              <h4 class="journey-title">車で行ける離島</h4>
+              <div class="journey-stations" style="--stations: 4">
+                <button type="button" class="station" aria-expanded="true" aria-controls="journey-1-0"><span class="station-time">20分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">海中道路</span></button>
+                <button type="button" class="station" aria-expanded="false" aria-controls="journey-1-1"><span class="station-time">30分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">浜比嘉島</span></button>
+                <button type="button" class="station" aria-expanded="false" aria-controls="journey-1-2"><span class="station-time">30分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">果報バンタ</span></button>
+                <button type="button" class="station" aria-expanded="false" aria-controls="journey-1-3"><span class="station-time">40分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">伊計島</span></button>
+              </div>
+              <div class="journey-description" aria-live="polite">
+                <p class="route-note" id="journey-1-0"><span class="wb">与勝半島から</span><span class="wb">平安座島まで、</span><span class="wb">海の上を</span><span class="nowrap">4.7km走る道路。</span></p>
+                <p class="route-note" id="journey-1-1" hidden><span class="wb">海中道路の先に</span><span class="wb">橋でつながる島。</span><span class="wb">赤瓦と</span><span class="wb">石垣の集落が</span><span class="wb">残っています。</span></p>
+                <p class="route-note" id="journey-1-2" hidden><span class="wb">宮城島の</span><span class="wb">「ぬちまーす</span><span class="wb">観光製塩</span><span class="wb">ファクトリー」の</span><span class="wb">敷地にある</span><span class="wb">展望台。</span><span class="wb">バンタは</span><span class="wb">沖縄の言葉で</span><span class="wb">崖のことです。</span></p>
+                <p class="route-note" id="journey-1-3" hidden><span class="wb">宮城島と</span><span class="wb">伊計大橋で</span><span class="wb">つながる島。</span></p>
+              </div>
+            </div>
+            <div class="journey">
+              <h4 class="journey-title">船で行く離島 宿から１時間以内</h4>
+              <div class="journey-stations journey-stations-boat" style="--stations: 2">
+                <button type="button" class="station" aria-expanded="true" aria-controls="journey-2-0"><span class="station-time">20分</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">平敷屋港</span></button>
+                <button type="button" class="station" aria-expanded="false" aria-controls="journey-2-1"><span class="station-time station-time-wrap">高速船orフェリー</span><span class="station-dot" aria-hidden="true"></span><span class="station-name">津堅島</span></button>
+              </div>
+              <div class="journey-description" aria-live="polite">
+                <p class="route-note" id="journey-2-0"><span class="wb">津堅島へ渡る</span><span class="wb">船が出る港。</span></p>
+                <p class="route-note" id="journey-2-1" hidden><span class="wb">平敷屋港から</span><span class="wb">フェリーで30分、</span><span class="wb">高速船で15分</span></p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="media-col">
           <figure class="photo-frame">
@@ -1076,12 +1176,69 @@
       </div>
     </section>
 
+    <section class="section events" aria-labelledby="events-title">
+      <div class="section-inner">
+        <h2 id="events-title" class="section-title">うるま市の行事</h2>
+        <div class="events-tabs" role="tablist" aria-labelledby="events-title">
+          <button type="button" role="tab" id="events-tab-1" data-month="1" aria-controls="events-panel-1" aria-selected="true" tabindex="0"><span class="current-month" hidden>今月</span>1月</button>
+          <button type="button" role="tab" id="events-tab-2" data-month="2" aria-controls="events-panel-2" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>2月</button>
+          <button type="button" role="tab" id="events-tab-3" data-month="3" aria-controls="events-panel-3" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>3月</button>
+          <button type="button" role="tab" id="events-tab-4" data-month="4" aria-controls="events-panel-4" aria-selected="false" tabindex="-1" disabled><span class="current-month" hidden>今月</span>4月</button>
+          <button type="button" role="tab" id="events-tab-5" data-month="5" aria-controls="events-panel-5" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>5月</button>
+          <button type="button" role="tab" id="events-tab-6" data-month="6" aria-controls="events-panel-6" aria-selected="false" tabindex="-1" disabled><span class="current-month" hidden>今月</span>6月</button>
+          <button type="button" role="tab" id="events-tab-7" data-month="7" aria-controls="events-panel-7" aria-selected="false" tabindex="-1" disabled><span class="current-month" hidden>今月</span>7月</button>
+          <button type="button" role="tab" id="events-tab-8" data-month="8" aria-controls="events-panel-8" aria-selected="false" tabindex="-1" disabled><span class="current-month" hidden>今月</span>8月</button>
+          <button type="button" role="tab" id="events-tab-9" data-month="9" aria-controls="events-panel-9" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>9月</button>
+          <button type="button" role="tab" id="events-tab-10" data-month="10" aria-controls="events-panel-10" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>10月</button>
+          <button type="button" role="tab" id="events-tab-11" data-month="11" aria-controls="events-panel-11" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>11月</button>
+          <button type="button" role="tab" id="events-tab-12" data-month="12" aria-controls="events-panel-12" aria-selected="false" tabindex="-1"><span class="current-month" hidden>今月</span>12月</button>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-1" aria-labelledby="events-tab-1" tabindex="0">
+          <article class="event"><h3><span class="wb">あやはし</span><span class="wb">海中ロードレース大会</span></h3><p><span class="wb">2027年は1月24日</span></p><p><span class="wb">海中道路</span><span class="wb">（宿から車20分）</span></p></article>
+          <article class="event"><h3><span class="wb">沖縄観光闘牛</span></h3><p><span class="wb">2027年は1月23日・24日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-2" aria-labelledby="events-tab-2" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">阪神タイガース2軍</span><span class="wb"> 春季キャンプ</span></h3><p><span class="wb">例年2月</span><span class="wb">（2026年は2月1日〜25日）</span></p><p><span class="wb">具志川野球場</span></p></article>
+          <article class="event"><h3><span class="wb">沖縄観光闘牛</span></h3><p><span class="wb">2027年は2月20日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-3" aria-labelledby="events-tab-3" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">沖縄観光闘牛</span></h3><p><span class="wb">2027年は3月20日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-4" aria-labelledby="events-tab-4" tabindex="0" hidden>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-5" aria-labelledby="events-tab-5" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">春の</span><span class="wb">全島闘牛大会</span></h3><p><span class="wb">2026年は5月10日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-6" aria-labelledby="events-tab-6" tabindex="0" hidden>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-7" aria-labelledby="events-tab-7" tabindex="0" hidden>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-8" aria-labelledby="events-tab-8" tabindex="0" hidden>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-9" aria-labelledby="events-tab-9" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">うるま市</span><span class="wb">エイサーまつり</span></h3><p><span class="wb">2026年は9月19日・20日</span></p><p><span class="wb">県道75号線</span><span class="wb">（安慶名十字路〜</span><span class="wb">琉球銀行具志川支店）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-10" aria-labelledby="events-tab-10" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">全島獅子舞</span><span class="wb">フェスティバル</span></h3><p><span class="wb">2026年は10月10日・11日</span></p><p><span class="wb">勝連城跡</span><span class="wb">（宿から車15分）</span></p></article>
+          <article class="event"><h3><span class="wb">石川</span><span class="wb">ハーリー大会</span></h3><p><span class="wb">2026年は10月18日</span></p><p><span class="wb">石川漁港周辺</span></p></article>
+          <article class="event"><h3><span class="wb">沖縄観光闘牛</span></h3><p><span class="wb">2026年は10月17日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-11" aria-labelledby="events-tab-11" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">秋の</span><span class="wb">全島闘牛大会</span></h3><p><span class="wb">2025年は11月9日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+          <article class="event"><h3><span class="wb">沖縄観光闘牛</span></h3><p><span class="wb">2026年は11月14日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <div class="events-panel" role="tabpanel" id="events-panel-12" aria-labelledby="events-tab-12" tabindex="0" hidden>
+          <article class="event"><h3><span class="wb">沖縄観光闘牛</span></h3><p><span class="wb">2026年は12月27日</span></p><p><span class="wb">石川多目的ドーム闘牛場</span><span class="wb">（宿から車30分）</span></p></article>
+        </div>
+        <p class="events-note"><span class="wb">開催日は</span><span class="wb">変わることが</span><span class="wb">あります。</span><span class="wb">お出かけ前に</span><span class="wb">主催者の案内を</span><span class="wb">ご確認ください。</span></p>
+      </div>
+    </section>
+
     <section class="section space" id="gallery">
       <div class="section-inner">
         <div class="space-head">
           <h2 class="section-title space-title" lang="en">Bigger on the inside</h2>
           <p class="space-title-ja"><span class="np">外から見るより</span><span class="np">中のほうが広い</span></p>
-          <p class="quote-source">Booking.com の口コミより</p>
           <p class="section-copy"><span class="wb">リビングと</span><span class="wb">キッチン、</span><span class="wb">寝室3部屋、</span><span class="wb">浴室を</span><span class="wb">9名まで</span><span class="wb">使えます。</span><span class="wb">設備は</span><span class="wb">新しく、</span><span class="wb">調理器具と</span><span class="wb">ボードゲームも</span><span class="wb">そろっています。</span></p>
         </div>
         <div class="space-summary"><span class="nowrap">1棟貸切 ·</span> <span class="nowrap">最大9名 ·</span> <span class="nowrap">寝室3 ·</span> <span class="nowrap">ベッド7 ·</span> <span class="nowrap">バス1 ·</span> <span class="nowrap">90㎡</span></div>
@@ -1121,7 +1278,7 @@
       <div class="section-inner">
         <div class="reviews-head">
           <div>
-            <h2 class="section-title">泊まった方の声</h2>
+            <h2 class="section-title">宿泊者のお声</h2>
           </div>
         </div>
         <div class="rating-breakdown">
@@ -1138,35 +1295,27 @@
         <div class="slider-track">
           <div class="slider" id="reviewSlider">
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">お家のような</span><span class="wb">空間で</span><span class="wb">すごく</span><span class="wb">過ごしやすかったです。</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">部屋も</span><span class="wb">寝室として</span><span class="wb">使えるのが</span><span class="wb">3部屋も</span><span class="wb">あるので</span><span class="wb">三世代で</span><span class="wb">利用でき</span><span class="wb">大変</span><span class="wb">ありがたい</span><span class="wb">場所です。</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">子供向けの</span><span class="wb">玩具や</span><span class="wb">絵本もあり</span><span class="wb">子供達が</span><span class="wb">大喜びでした。</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">みんなで</span><span class="wb">遊べる</span><span class="wb">ゲームも</span><span class="wb">たくさんあって</span><span class="wb">（中略）</span><span class="wb">できていたら</span><span class="wb">楽しすぎて</span><span class="wb">もっと</span><span class="wb">遊んでました！！</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">立地も</span><span class="wb">海中道路が</span><span class="wb">近いので</span><span class="wb">シュノーケルが</span><span class="wb">好きな</span><span class="wb">私には</span><span class="wb">最高な</span><span class="wb">場所です。</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">宿泊先は</span><span class="wb">内外とても</span><span class="wb">綺麗で</span><span class="wb">（中略）</span><span class="wb">コンドミニアムとしては</span><span class="wb">今までで</span><span class="wb">No.1です。</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">期待以上でした！</span><span class="wb">（中略）</span><span class="wb">ゆっくり</span><span class="wb">できました！</span></blockquote>
             </article>
             <article class="slide">
-              <div class="review-meta"><span>Booking.com</span></div>
               <blockquote><span class="wb">綺麗に</span><span class="wb">清掃されていたこと。</span></blockquote>
             </article>
           </div>
@@ -1180,13 +1329,23 @@
     </section>
 
     <section class="section access">
-      <div class="section-inner two-col reverse">
-        <div class="text-col access-card">
-          <h2 class="section-title"><span class="np">那覇空港から</span><span class="np">東海岸のうるまへ</span></h2>
-          <p class="section-copy"><span class="wb">那覇空港から</span><span class="wb">車50〜60分。</span><span class="wb">沖縄自動車道</span><span class="wb">「沖縄北IC」経由で</span><span class="wb">海中道路や</span><span class="wb">うるマルシェへ</span><span class="wb">向かいやすい</span><span class="wb">住宅街に</span><span class="wb">あります。</span></p>
-          <ul class="access-list">
-            <li><strong>住所</strong><span>〒904-2221 沖縄県うるま市平良川306-9</span></li>
-            <li><strong>Googleマップ</strong><a href="https://maps.app.goo.gl/DzYAKemADFCuFaQC7" target="_blank" rel="noopener">Googleマップで開く</a></li>
+      <div class="section-inner">
+        <div class="access-top">
+          <div class="text-col access-card">
+            <h2 class="section-title"><span class="np">那覇空港から</span><span class="np">東海岸のうるまへ</span></h2>
+            <p class="section-copy"><span class="wb">那覇空港から</span><span class="wb">車50〜60分。</span><span class="wb">沖縄自動車道</span><span class="wb">「沖縄北IC」経由で</span><span class="wb">海中道路や</span><span class="wb">うるマルシェへ</span><span class="wb">向かいやすい</span><span class="wb">住宅街に</span><span class="wb">あります。</span></p>
+            <ul class="access-list">
+              <li><strong>住所</strong><span>〒904-2221 沖縄県うるま市平良川306-9</span></li>
+              <li><strong>Googleマップ</strong><a href="https://maps.app.goo.gl/DzYAKemADFCuFaQC7" target="_blank" rel="noopener">Googleマップで開く</a></li>
+            </ul>
+          </div>
+          <div class="media-col map-wrap">
+            <!-- Googleマップ埋め込み（iframeで地図表示） -->
+            <iframe title="VILLA YASUMIBA Okinawa Uruma Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4854.790297042546!2d127.84717087638957!3d26.36649118334901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e50fec333685b3%3A0x4d25de5020dd9fa2!2sYASUMIBA%20Okinawa%20Uruma!5e1!3m2!1sja!2sjp!4v1780394399318!5m2!1sja!2sjp"></iframe>
+          </div>
+        </div>
+        <div class="access-details">
+          <ul class="access-list access-rules">
             <li><strong>駐車場</strong><span>普通車2台・軽自動車3台まで無料</span></li>
             <li><strong>チェックイン</strong><span>16:00〜22:00</span></li>
             <li><strong>チェックアウト</strong><span>10:00まで</span></li>
@@ -1194,15 +1353,29 @@
             <li><strong>禁止事項</strong><span>パーティー・喫煙・ペットは不可。花火は原則禁止です。</span></li>
             <li><strong>ベビーベッド</strong><span>0〜1歳は無料</span></li>
           </ul>
+          <p class="guest-notes-label">宿泊者のお声</p>
           <ul class="guest-notes">
             <li><span class="wb">「住宅街という</span><span class="wb">感じですが</span><span class="wb">私達の</span><span class="wb">目的地に</span><span class="wb">近くて</span><span class="wb">歩いて</span><span class="wb">行けました、</span><span class="wb">うるま市エイサー祭り</span><span class="wb">最高でした。」</span></li>
             <li><span class="wb">「近場に</span><span class="wb">飲食店も</span><span class="wb">たくさん</span><span class="wb">あるので</span><span class="wb">助かりました。」</span></li>
           </ul>
-          <p class="quote-source">Booking.com の口コミより</p>
         </div>
-        <div class="media-col map-wrap">
-          <!-- Googleマップ埋め込み（iframeで地図表示） -->
-          <iframe title="VILLA YASUMIBA Okinawa Uruma Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4854.790297042546!2d127.84717087638957!3d26.36649118334901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e50fec333685b3%3A0x4d25de5020dd9fa2!2sYASUMIBA%20Okinawa%20Uruma!5e1!3m2!1sja!2sjp!4v1780394399318!5m2!1sja!2sjp"></iframe>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="section-inner">
+        <h2 id="faq-title" class="section-title">よくある質問</h2>
+        <div class="faq-list">
+          <details><summary><span class="wb">何人まで</span><span class="wb">泊まれますか？</span></summary><p><span class="wb">最大9名です。</span><span class="wb">6名以上は</span><span class="wb">1名につき</span><span class="wb">2,000円の</span><span class="wb">追加料金が</span><span class="wb">かかります</span><span class="wb">（Booking.com の</span><span class="wb">宿の規則より）。</span></p></details>
+          <details><summary><span class="wb">寝具は</span><span class="wb">何がありますか？</span></summary><p><span class="wb">シングルベッド2台、</span><span class="wb">布団4組、</span><span class="wb">ソファベッド1台です。</span><span class="wb">寝室は</span><span class="wb">3部屋あります。</span></p></details>
+          <details><summary><span class="wb">駐車場は</span><span class="wb">ありますか？</span></summary><p><span class="wb">普通車2台・</span><span class="wb">軽自動車3台まで</span><span class="wb">無料で</span><span class="wb">停められます。</span></p></details>
+          <details><summary><span class="wb">チェックインと</span><span class="wb">チェックアウトの</span><span class="wb">時間は？</span></summary><p><span class="wb">チェックインは</span><span class="wb">16:00〜22:00、</span><span class="wb">チェックアウトは</span><span class="wb">10:00までです。</span></p></details>
+          <details><summary><span class="wb">子ども連れでも</span><span class="wb">泊まれますか？</span></summary><p><span class="wb">子ども部屋に</span><span class="wb">おもちゃがあります。</span><span class="wb">0〜1歳の</span><span class="wb">ベビーベッドは</span><span class="wb">無料です。</span></p></details>
+          <details><summary><span class="wb">料理は</span><span class="wb">できますか？</span></summary><p><span class="wb">キッチンに</span><span class="wb">冷蔵庫、</span><span class="wb">電子レンジ、</span><span class="wb">鍋と</span><span class="wb">フライパンが</span><span class="wb">あります。</span></p></details>
+          <details><summary><span class="wb">那覇空港から</span><span class="wb">どのくらい</span><span class="wb">かかりますか？</span></summary><p><span class="wb">車で</span><span class="wb">約50〜60分です。</span><span class="wb">沖縄自動車道の</span><span class="wb">沖縄北ICを</span><span class="wb">使います。</span></p></details>
+          <details><summary><span class="wb">近くに</span><span class="wb">スーパーや</span><span class="wb">飲食店は</span><span class="wb">ありますか？</span></summary><p><span class="wb">徒歩10分圏内に</span><span class="wb">飲食店と</span><span class="wb">スーパーが</span><span class="wb">あります。</span></p></details>
+          <details><summary><span class="wb">海中道路や</span><span class="wb">島へは</span><span class="wb">どのくらいですか？</span></summary><p><span class="wb">海中道路まで</span><span class="wb">車で20分です。</span><span class="wb">浜比嘉島と</span><span class="wb">宮城島へは30分、</span><span class="wb">伊計島へは</span><span class="wb">40分です。</span></p></details>
+          <details><summary><span class="wb">予約は</span><span class="wb">どこから</span><span class="wb">できますか？</span></summary><p><span class="wb">Booking.com から</span><span class="wb">予約できます。</span><span class="wb">料金は</span><span class="wb">時期によって</span><span class="wb">変わります。</span></p></details>
         </div>
       </div>
     </section>
@@ -1486,6 +1659,109 @@
         }
       }, { threshold: 0 });
       ratingObserver.observe(rating);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      document.querySelectorAll('.journey').forEach(function (line) {
+        var buttons = Array.from(line.querySelectorAll('.station'));
+        var description = line.querySelector('.journey-description');
+        var animation;
+        function stopAnimation() {
+          if (animation) { animation.cancel(); animation = null; }
+          description.style.height = '';
+          description.style.overflow = '';
+        }
+        reduced.addEventListener('change', function () { if (reduced.matches) stopAnimation(); });
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            var height = description.getBoundingClientRect().height;
+            stopAnimation();
+            var opening = button.getAttribute('aria-expanded') !== 'true';
+            buttons.forEach(function (station) {
+              var active = station === button && opening;
+              station.setAttribute('aria-expanded', String(active));
+              if (active) station.querySelector('.station-dot').getAnimations().forEach(function (animation) { animation.cancel(); });
+              document.getElementById(station.getAttribute('aria-controls')).hidden = !active;
+            });
+            if (!reduced.matches) {
+              var nextHeight = description.getBoundingClientRect().height;
+              description.style.overflow = 'hidden';
+              animation = description.animate([{ height: height + 'px' }, { height: nextHeight + 'px' }], { duration: 200, easing: 'ease' });
+              animation.onfinish = stopAnimation;
+            }
+          });
+        });
+      });
+      var journeys = document.querySelector('.journeys');
+      var dotAnimations = [];
+      var dotTimers = [];
+      function stopDotAnimations() {
+        dotTimers.forEach(clearTimeout);
+        dotTimers = [];
+        dotAnimations.forEach(function (animation) { animation.cancel(); });
+        dotAnimations = [];
+      }
+      reduced.addEventListener('change', function () {
+        if (reduced.matches) stopDotAnimations();
+      });
+      if (journeys && !reduced.matches) {
+        var journeysObserver = new IntersectionObserver(function (entries) {
+          if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+          journeysObserver.disconnect();
+          if (reduced.matches) return;
+          journeys.querySelectorAll('.station[aria-expanded="false"]').forEach(function (station, index) {
+            dotTimers.push(setTimeout(function () {
+              if (reduced.matches || station.getAttribute('aria-expanded') !== 'false') return;
+              dotAnimations.push(station.querySelector('.station-dot').animate([
+                { transform: 'scale(1)' },
+                { transform: 'scale(1.6)' },
+                { transform: 'scale(1)' }
+              ], { duration: 400, easing: 'ease-in-out' }));
+            }, index * 90));
+          });
+        }, { threshold: 0 });
+        journeysObserver.observe(journeys);
+      }
+      var calendar = document.querySelector('.events');
+      var tabs = Array.from(calendar.querySelectorAll('[role="tab"]'));
+      var enabled = tabs.filter(function (tab) { return !tab.disabled; });
+      var month = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Tokyo', month: 'numeric' }).format(new Date()));
+      function select(tab, scroll) {
+        tabs.forEach(function (item) {
+          var active = item === tab;
+          item.setAttribute('aria-selected', String(active));
+          item.tabIndex = active ? 0 : -1;
+          item.querySelector('.current-month').hidden = !(active && Number(item.dataset.month) === month);
+          document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
+        });
+        if (scroll) {
+          var band = calendar.querySelector('.events-tabs');
+          band.scrollTo({ left: tab.offsetLeft - tabs[0].offsetLeft - (band.clientWidth - tab.offsetWidth) / 2, behavior: 'instant' });
+        }
+      }
+      var first;
+      for (var offset = 0; offset < 12; offset++) {
+        first = enabled.find(function (tab) { return Number(tab.dataset.month) === (month - 1 + offset) % 12 + 1; });
+        if (first) break;
+      }
+      select(first, true);
+      enabled.forEach(function (tab, index) {
+        tab.addEventListener('click', function () { select(tab, true); });
+        tab.addEventListener('keydown', function (event) {
+          var target;
+          if (event.key === 'ArrowRight') target = enabled[(index + 1) % enabled.length];
+          else if (event.key === 'ArrowLeft') target = enabled[(index - 1 + enabled.length) % enabled.length];
+          else if (event.key === 'Home') target = enabled[0];
+          else if (event.key === 'End') target = enabled[enabled.length - 1];
+          else return;
+          event.preventDefault();
+          select(target, true);
+          target.focus({ preventScroll: true });
+        });
+      });
     })();
   </script>
 </body>
